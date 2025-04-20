@@ -46,5 +46,9 @@ description = "Preview document"
 
 [tool.pixi.tasks.render]
 cmd = "pixi run -e dev --frozen quarto render src"
-description = "Render"
+description = "Render outputs"
+
+[tool.pixi.tasks.setup]
+cmd = "pixi run -e dev --frozen quarto install tinytex"
+description = "Initial setup"
 

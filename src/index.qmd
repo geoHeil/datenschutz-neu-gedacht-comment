@@ -1,12 +1,26 @@
 ---
 title: Kommentar Datenschutz
 authors:
-  - name: Norah Jones
-    affiliation: The University
+  - name: Rania Wazir
+    affiliation: Leiwand.ai
     roles: writing
     corresponding: true
+  - name: Georg Heiler
+    affiliation: Complexity Science Hub Viena, Magenta
+    roles: writing
 bibliography: references.bib
 ---
 
-## Section
+## Introduction
 This is a simple placeholder for the manuscript's main document [@knuth84].
+
+## generic comment
+{{< include generic.qmd >}}
+
+
+## technical comment
+{{< include technical.qmd >}}
+
+## demo python computation
+
+{{< include hello.qmd >}}
