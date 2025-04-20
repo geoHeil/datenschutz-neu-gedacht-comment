@@ -5,9 +5,9 @@ hi from technical [@knuth84].
 
 Challenges
 
-    Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, retractable B2C data sharing across all industries.
+    Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, possibly even retractable data sharing.
 
-    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure.
+    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure. working with data requires flexibility (CSVs)
 
     https://www.cambridge.org/core/journals/german-law-journal/article/differential-data-protection-regimes-in-datadriven-research-why-the-gdpr-is-more-researchfriendly-than-you-think/ACA472EB20DBB958C8C875E9DFEA9C97
 
