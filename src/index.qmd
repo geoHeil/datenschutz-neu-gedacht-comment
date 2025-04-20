@@ -6,7 +6,7 @@ authors:
     roles: writing
     corresponding: true
   - name: Georg Heiler
-    affiliation: Complexity Science Hub Viena, Magenta
+    affiliation: Complexity Science Hub Vienna, Magenta
     roles: writing
 bibliography: references.bib
 ---
@@ -16,7 +16,6 @@ This is a simple placeholder for the manuscript's main document [@knuth84].
 
 ## generic comment
 {{< include generic.qmd >}}
-
 
 ## technical comment
 {{< include technical.qmd >}}

@@ -1,6 +1,72 @@
+### dummy
 hi from technical [@knuth84].
 
-hi some more.
+### challenges
+
+Challenges
+
+    Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, retractable B2C data sharing across all industries.
+
+    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure.
+
+    https://www.cambridge.org/core/journals/german-law-journal/article/differential-data-protection-regimes-in-datadriven-research-why-the-gdpr-is-more-researchfriendly-than-you-think/ACA472EB20DBB958C8C875E9DFEA9C97
+
+User Experience: Ensuring that users can easily understand, manage, and retract consent for individual data points remains a challenge for many platforms 
+
+(https://www.cookieyes.com/blog/gdpr-compliance-for-startups/ ,     https://www.cambridge.org/core/journals/german-law-journal/article/differential-data-protection-regimes-in-datadriven-research-why-the-gdpr-is-more-researchfriendly-than-you-think/ACA472EB20DBB958C8C875E9DFEA9C97)
+
+- advantageous for the big and established companies
+  - repeated config management may lead to overboarding complexity (for simple processes)
+  - data sharing may enable new intermediaries (but these do not come from the big i.e. like log in with apple, google, facebook)
+- missing established technical implementation. Complexity in tracking databreaches
+    - currently only focus on cookies
+    - and droppox style sharing
+    - further technical limitations (legal, technical vetting process)
+
+#### implementation managable for small-medium sized companies
+
+- european sized (small-medium) companies often do not benefit from the regulation
+- we want to improve the state for society but not overburden the majority of european companies
+
+#### missing established technical implementation
+
+- no established large-scale implemenation (world wide, but also not in europe)
+- some first moving applications
+
+notable examples
+- FHIR https://grants.nih.gov/grants/guide/notice-files/NOT-OD-19-122.html
+- https://www.capminds.com/blog/the-mystery-behind-fhir-in-healthcare-data-sharing/
+
+
+b2c
+
+- https://mydatamyconsent.com/en-us
+
+b2b
+
+- https://nexyo.io/
+
+
+overview
+
+- Personal Data Management Platforms
+- Consent Management Tools (to manage all the cookie consents in a single place)
+- Data Breach detection and handling
+
+### suggestions
+
+self create with public interest in mind
+
+openly
+
+#### SPRIND
+
+example: https://www.sprind.org/en/actions/challenges/eudi-wallet-prototypes
+
+- open innovation
+- but on the european level for a souvereign Europe
+
+### notes
 
 
 makes personal data available, directly or indirectly>> da sollte klarer sein ob auch Model weights damit gemeint sind (nicht zu generisch)
@@ -11,3 +77,5 @@ makes personal data available, directly or indirectly>> da sollte klarer sein ob
     Intermediaries: Es ist schon länger der Traum sowas zu haben (Herr seiner Daten zu sein und sie flexibel überall zu haben bzw. ggf. monetarisieren zu können)
         Aktuell ist mir kein ausgereifter bzw. auch verbreiteter Ansatz bekannt. Das heißt nicht, dass so etwas entwickelt werden kann. Ich bin mir aber nicht sicher, ob den Personen klar ist, was da für ein Aufwand dahinter steht. (plus auch Marktmacht notwendig ist)
         Am ehesten kommen hier wieder die großen amerikanischen Player (log-in-with---XXXX) bzw. Freigabe gewisser (Teil-) Aspekte der Daten
+
+- https://www.permissionslipcr.com/
