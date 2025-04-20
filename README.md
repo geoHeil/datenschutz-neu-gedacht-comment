@@ -1,5 +1,11 @@
 # Datenschutz neu gedacht - Kommentar
 
+comment on https://zivilrecht.univie.ac.at/team/wendehorst-christiane/workshop-datenschutz-neu-gedacht-herausforderungen-durch-ki-und-globalen-wettbewerb/
+
+> DEADLINE: 2025-TODO SET DEADLINE
+
+- Rania: main part
+- Georg: Technical part
 
 ## prerequisites
 
