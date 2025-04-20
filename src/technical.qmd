@@ -5,6 +5,8 @@ hi from technical [@knuth84].
 
 Challenges
 
+    - interface/Protocol for data exchange with permissions missing especiall with good UX
+
     Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, possibly even retractable data sharing.
 
     Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure. working with data requires flexibility (CSVs)
@@ -22,6 +24,11 @@ User Experience: Ensuring that users can easily understand, manage, and retract 
     - currently only focus on cookies
     - and droppox style sharing
     - further technical limitations (legal, technical vetting process)
+
+
+relevancy to MCP
+
+- https://defensiblesystems.substack.com/p/oauths-role-in-mcp-security
 
 #### implementation managable for small-medium sized companies
 
