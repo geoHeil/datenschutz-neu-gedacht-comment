@@ -11,7 +11,7 @@ authors:
 bibliography: references.bib
 ---
 
-## Introduction
+# Introduction
 
 - Acknowledge the evolving regulatory landscape, aiming to adapt data protection for emerging technologies like AI while supporting innovation and easing the burden on SMEs.
 - State the comment's purpose: To highlight key technical challenges in implementing effective, user-centric data control mechanisms and propose a collaborative path towards practical solutions.
@@ -19,12 +19,12 @@ bibliography: references.bib
 
 This is a simple placeholder for the manuscript's main document [@knuth84].
 
-## generic comment
+# generic comment
 {{< include generic.qmd >}}
 
-## Technical comment
+# Technical comment
 {{< include technical.qmd >}}
 
-## demo python computation
+# demo python computation
 
 {{< include hello.qmd >}}

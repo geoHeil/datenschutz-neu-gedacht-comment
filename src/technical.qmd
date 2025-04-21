@@ -1,11 +1,11 @@
-### dummy
+## dummy
 hi from technical [@knuth84].
 
 draft structure for the text here below
 
 This structure aims for a logical flow: Problem -> Importance -> Solution -> Specifics -> Conclusion, while weaving in the regulatory context concerning AI and SMEs 
 
-### Core Technical Challenges in Data Sharing and Consent Management
+## Core Technical Challenges in Data Sharing and Consent Management
 
 - Lack of Standardized Protocols/Interfaces:
   - Absence of universal, widely adopted standards for granular, permissioned, and potentially retractable data sharing.
@@ -17,12 +17,12 @@ This structure aims for a logical flow: Problem -> Importance -> Solution -> Spe
   - User Experience (UX) hurdles in making consent management understandable and actionable for users.
   - Technical difficulties in tracking data provenance and managing data breaches effectively without clear standards.
      
-### Heightened Relevance in the Era of AI and Advanced Data Ecosystems 
+## Heightened Relevance in the Era of AI and Advanced Data Ecosystems 
 
 - Explain why these challenges are critical now: AI development relies on large-scale data access, demanding better control mechanisms 
 - Emerging concepts (like MCP or new data intermediaries) require robust technical foundations for trust and compliance. (Reference your OAuth/MCP link here).   
 
-### Towards Solutions: A Call for Open Innovation and Standardization 
+## Towards Solutions: A Call for Open Innovation and Standardization 
 
 - Need for Open Standards and Reference Implementations:
   - Argue for developing common, open protocols and interfaces for consent and data sharing.
@@ -34,7 +34,7 @@ This structure aims for a logical flow: Problem -> Importance -> Solution -> Spe
   - Suggest an open innovation model (like SPRIND) at the EU level.
   - Goal: To fund and coordinate the development of necessary technical building blocks (protocols, open-source tools) in the public interest, fostering European sovereignty.
          
-### Specific Technical Considerations for Standardization Efforts 
+## Specific Technical Considerations for Standardization Efforts 
 
 Address key ambiguities needing clear technical definitions/guidelines (based on your notes):
 
@@ -43,13 +43,13 @@ Address key ambiguities needing clear technical definitions/guidelines (based on
 - Practical, scalable interpretation of "durable medium".
 - Technical requirements for trustworthy "data intermediaries".
 
-### Conclusion 
+## Conclusion 
 
 - Reiterate the urgency of addressing these technical gaps to achieve the dual goals of robust data protection and fostering innovation, particularly for European SMEs 
 
 - End with a strong call for collaborative, open development of technical standards and tools.
 
-### draft thoughts and link material below
+## draft thoughts and link material below
 
  Disproportionate Burden on SMEs:
 
