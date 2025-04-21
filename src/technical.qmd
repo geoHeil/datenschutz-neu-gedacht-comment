@@ -1,6 +1,75 @@
 ### dummy
 hi from technical [@knuth84].
 
+draft structure for the text here below
+
+This structure aims for a logical flow: Problem -> Importance -> Solution -> Specifics -> Conclusion, while weaving in the regulatory context concerning AI and SMEs 
+
+### Core Technical Challenges in Data Sharing and Consent Management
+
+- Lack of Standardized Protocols/Interfaces:
+  - Absence of universal, widely adopted standards for granular, permissioned, and potentially retractable data sharing.
+  - Impact: Hinders interoperability, creates complexity, and limits user control.
+  - Current implementations often limited (e.g., simple file sharing, cookie consents).
+     
+ - Implementation Complexity vs. Practicality:
+  - Tension between the need for flexibility (e.g., diverse data formats) and robust, enforceable technical/contractual frameworks for trust.
+  - User Experience (UX) hurdles in making consent management understandable and actionable for users.
+  - Technical difficulties in tracking data provenance and managing data breaches effectively without clear standards.
+     
+### Heightened Relevance in the Era of AI and Advanced Data Ecosystems 
+
+- Explain why these challenges are critical now: AI development relies on large-scale data access, demanding better control mechanisms 
+- Emerging concepts (like MCP or new data intermediaries) require robust technical foundations for trust and compliance. (Reference your OAuth/MCP link here).   
+
+### Towards Solutions: A Call for Open Innovation and Standardization 
+
+- Need for Open Standards and Reference Implementations:
+  - Argue for developing common, open protocols and interfaces for consent and data sharing.
+  - Emphasize design goals: User-centricity, SME manageability, security, and auditability.
+         
+- Illustrative Examples (Use Sparingly): Briefly mention existing niche efforts (like FHIR in healthcare, specific B2C/B2B tools) as indicators of need and direction, not as complete solutions and in particular missing out for B2C.
+         
+- Proposed Approach: Collaborative European Initiative:
+  - Suggest an open innovation model (like SPRIND) at the EU level.
+  - Goal: To fund and coordinate the development of necessary technical building blocks (protocols, open-source tools) in the public interest, fostering European sovereignty.
+         
+### Specific Technical Considerations for Standardization Efforts 
+
+Address key ambiguities needing clear technical definitions/guidelines (based on your notes):
+
+- Scope of "making personal data available" (e.g., inclusion of AI model weights?).
+- Precise application and management of "consent expiry" (e.g., for core service vs. marketing?).
+- Practical, scalable interpretation of "durable medium".
+- Technical requirements for trustworthy "data intermediaries".
+
+### Conclusion 
+
+- Reiterate the urgency of addressing these technical gaps to achieve the dual goals of robust data protection and fostering innovation, particularly for European SMEs 
+
+- End with a strong call for collaborative, open development of technical standards and tools.
+
+### draft thoughts and link material below
+-------------------
+
+ Disproportionate Burden on SMEs:
+
+     Current regulatory demands and lack of standard tools create significant overhead, potentially favouring large, established (often non-EU) companies 
+
+.
+ Difficulty for SMEs to implement sophisticated features like granular consent, timed expiry, or easy revocation, potentially hindering compliance and innovation 
+.
+ Risk of overly complex configuration management even for simple processes.
+
+### structure outline
+
+- challenges
+  - lack of standard: missing protocol/interface
+  - flexibility vs. enforcable - the trust challenge when working with data
+  - adavantages for big (US) companies
+  - ever more important relevancy in the age of MCP and AI
+- suggestion: SPRIND like open innovation
+
 ### challenges
 
 Challenges

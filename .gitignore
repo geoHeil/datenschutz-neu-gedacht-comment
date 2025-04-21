@@ -225,3 +225,5 @@ src/.quarto/*
 src/_manuscript/*
 src/_freeze/*
 src/site_libs/*
+
+src/index_files/
