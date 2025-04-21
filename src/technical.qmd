@@ -50,7 +50,6 @@ Address key ambiguities needing clear technical definitions/guidelines (based on
 - End with a strong call for collaborative, open development of technical standards and tools.
 
 ### draft thoughts and link material below
--------------------
 
  Disproportionate Burden on SMEs:
 
