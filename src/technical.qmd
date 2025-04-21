@@ -1,5 +1,4 @@
 ## dummy
-hi from technical [@knuth84].
 
 draft structure for the text here below
 
@@ -77,13 +76,10 @@ Challenges
 
     Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, possibly even retractable data sharing.
 
-    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure. working with data requires flexibility (CSVs)
-
-    https://www.cambridge.org/core/journals/german-law-journal/article/differential-data-protection-regimes-in-datadriven-research-why-the-gdpr-is-more-researchfriendly-than-you-think/ACA472EB20DBB958C8C875E9DFEA9C97
+    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure. working with data requires flexibility (CSVs) [@comande_differential_2022]
 
 User Experience: Ensuring that users can easily understand, manage, and retract consent for individual data points remains a challenge for many platforms 
-
-(https://www.cookieyes.com/blog/gdpr-compliance-for-startups/ ,     https://www.cambridge.org/core/journals/german-law-journal/article/differential-data-protection-regimes-in-datadriven-research-why-the-gdpr-is-more-researchfriendly-than-you-think/ACA472EB20DBB958C8C875E9DFEA9C97)
+[@comande_differential_2022]
 
 - advantageous for the big and established companies
   - repeated config management may lead to overboarding complexity (for simple processes)
@@ -93,10 +89,13 @@ User Experience: Ensuring that users can easily understand, manage, and retract 
     - and droppox style sharing
     - further technical limitations (legal, technical vetting process)
 
+what is mcp: [@noauthor_model_nodate]
 
-relevancy to MCP
+relevancy to  MCP OAUTh [@peterson_oauths_2024]
 
-- https://defensiblesystems.substack.com/p/oauths-role-in-mcp-security
+fix oauth in mcp [@noauthor_lets_2025]
+
+xss for mcp [@cross_s_2025]
 
 #### implementation managable for small-medium sized companies
 
@@ -112,6 +111,7 @@ notable examples
 - FHIR https://grants.nih.gov/grants/guide/notice-files/NOT-OD-19-122.html
 - https://www.capminds.com/blog/the-mystery-behind-fhir-in-healthcare-data-sharing/
 
+fhir [@noauthor_overview_nodate] [@noauthor_not-od-19-122_nodate, @admin_mystery_2020]
 
 b2c
 
@@ -121,6 +121,9 @@ b2b
 
 - https://nexyo.io/
 
+Here is a footnote reference,[^1].
+
+[^1]: Here is the footnote.
 
 overview
 
@@ -136,6 +139,7 @@ openly
 
 #### SPRIND
 
+[@noauthor_sprind_nodate]
 example: https://www.sprind.org/en/actions/challenges/eudi-wallet-prototypes
 
 - open innovation

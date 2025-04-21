@@ -17,7 +17,7 @@ bibliography: references.bib
 - State the comment's purpose: To highlight key technical challenges in implementing effective, user-centric data control mechanisms and propose a collaborative path towards practical solutions.
 
 
-This is a simple placeholder for the manuscript's main document [@knuth84].
+This is a simple placeholder for the manuscript's main document [@comande_differential_2022].
 
 # generic comment
 {{< include generic.qmd >}}
@@ -28,3 +28,5 @@ This is a simple placeholder for the manuscript's main document [@knuth84].
 # demo python computation
 
 {{< include hello.qmd >}}
+
+# references
