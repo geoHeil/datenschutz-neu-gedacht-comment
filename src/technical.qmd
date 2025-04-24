@@ -1,160 +1,104 @@
-## dummy
+## Core Technical Challenges in Data Sharing and Consent Management 
 
-draft structure for the text here below
+### Lack of standardized protocols
+The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
+Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
+Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.
 
-This structure aims for a logical flow: Problem -> Importance -> Solution -> Specifics -> Conclusion, while weaving in the regulatory context concerning AI and SMEs 
+### Misguided Cookie Consent Management
+Sometimes - new standards are enforced without the people at mind.
+Everyone has experienced GDPR cookie banners.
+And a lot of people just click something to make them go away.
+The obsolescence of the "Do Not Track" browser signal and the prevalence of ineffective cookie banners—often ignoring user preferences and lacking granular control—underscore this deficit, ultimately limiting user agency and introducing operational friction [@comande_differential_2022].
 
-## Core Technical Challenges in Data Sharing and Consent Management
+Consequently, the absence of standardized interfaces renders robust auditing of consent and possible revocation very hard for users.
 
-- Lack of Standardized Protocols/Interfaces:
-  - Absence of universal, widely adopted standards for granular, permissioned, and potentially retractable data sharing.
-  - Impact: Hinders interoperability, creates complexity, and limits user control.
-  - Current implementations often limited (e.g., simple file sharing, cookie consents).
-     
- - Implementation Complexity vs. Practicality:
-  - Tension between the need for flexibility (e.g., diverse data formats) and robust, enforceable technical/contractual frameworks for trust.
-  - User Experience (UX) hurdles in making consent management understandable and actionable for users.
-  - Technical difficulties in tracking data provenance and managing data breaches effectively without clear standards.
-     
+### EU vs. USA
+
+Developing and maintaining sophisticated features—such as granular consent options, time-bound permission expiry, straightforward revocation mechanisms, and auditable consent logs demands significant technical expertise and resources, favouring larger, often non-EU, corporations.
+This disparity creates an uneven competitive landscape where SMEs face substantial overhead and complex configuration challenges even for basic data processing, potentially impeding regulatory compliance and constraining innovation within the European market.
+
+Unlike US-based companies which benefit from economies of scale, EU companies often are rather small.
+In fact, the small to medium sized companies (SME) are the backbone of the European economy.
+However, these are overburdened by regulation especially without a clean and simple standard for implementation.
+Thus we must find an implementation of regulation which is supporting both goals:
+- European values (freedom, sovereignty)
+- Working with data (business)
+
+One example might be the single sign on (SSO) log-in with (Facebook, Google, Apple).
+Usually these companies provide means to manage access to their data.
+And due to their size a lot of other - also European players include theim in their digital service offerings.
+However, the functionality to review (audit) many grants accross the various providers is missing or automatic renewal process/expiry for grants.
+
+### Implementation complexity vs practicapility
+
+Once data is shared - it is hard to take it back.
+A fundamental conflict exists between the operational requirement for flexible data access and the necessity for robust technical and contractual frameworks to ensure trustworthy and enforceable consent restrictions.
+Meaningful data utilization in analytics or operational workflows, such as processing CSV files in visualization software, often necessitates access to data in relatively unprocessed formats.
+However, once data is exposed in such formats, direct technical control over subsequent duplication, dissemination, or use in derived applications (e.g., AI model training) is diminished, necessitating primary reliance on contractual enforcement and institutional trust.
+
+In principle it would be possible to only share data with vetted connectors.
+But a solely technical solution would fall short.
+Regular contracts willl be necessary to facilitate cross organizational trust.
+
 ## Heightened Relevance in the Era of AI and Advanced Data Ecosystems 
 
-- Explain why these challenges are critical now: AI development relies on large-scale data access, demanding better control mechanisms 
-- Emerging concepts (like MCP or new data intermediaries) require robust technical foundations for trust and compliance. (Reference your OAuth/MCP link here).   
+The proliferation of Artificial Intelligence (AI) magnifies the urgency of resolving these technical challenges, as AI development lifecycles depend heavily on large-scale data access, necessitating more sophisticated, trustworthy, and auditable governance mechanisms.
+Training performant AI models requires substantial data inputs.
+However, the prevailing lack of standardized controls for data access, usage restriction enforcement, and consent management generates significant risks concerning privacy breaches.
+Consequently, establishing robust technical foundations for data governance vis consent management is not merely a compliance exercise but a critical prerequisite for enabling responsible and ethical AI innovation.
+Furthermore, emerging paradigms for data ecosystems, including Model Context Protocols (MCP) [@noauthor_model_nodate] depend critically upon standardized and secure technical underpinnings for their viability and trustworthiness.
+Besides missing security and remote code execution challenges [@cross_s_2025], even established authorization layers such as OAuth face challenges[@peterson_oauths_2024, @noauthor_lets_2025] with MCP.
+
+Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025]:
+
+> Whoever controls the LLM interface— Claude, ChatGPT, Cursor, etc...—controls what tools users see, which ones get triggered, and what responses actually get surfaced. You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output. You may not even be allowed to install it
+
+## Remarks for refinement
+
+Effective standardization must provide precise technical definitions and operational guidelines for key terms and requirements frequently subject to ambiguity in regulatory texts and practical implementations.
+Firstly, the precise scope of actions such as "making personal data available" requires clarification—specifically, whether it encompasses derived data artifacts like trained AI model weights. Secondly, the application and technical management of "consent expiry" demand practical, implementable models, potentially distinguishing between consent for core service delivery versus ancillary purposes (e.g., marketing) and acknowledging the operational constraints faced by SMEs relative to large platforms capable of enforcing frequent re-consents (e.g., via OS updates).
+Thirdly, the requirement for information provision on a "durable medium" necessitates scalable, technically sound specifications that ensure verifiability and long-term accessibility beyond literal interpretations like paper printouts. 
 
 ## Towards Solutions: A Call for Open Innovation and Standardization 
 
-- Need for Open Standards and Reference Implementations:
-  - Argue for developing common, open protocols and interfaces for consent and data sharing.
-  - Emphasize design goals: User-centricity, SME manageability, security, and auditability.
-         
-- Illustrative Examples (Use Sparingly): Briefly mention existing niche efforts (like FHIR in healthcare, specific B2C/B2B tools) as indicators of need and direction, not as complete solutions and in particular missing out for B2C.
-         
-- Proposed Approach: Collaborative European Initiative:
-  - Suggest an open innovation model (like SPRIND) at the EU level.
-  - Goal: To fund and coordinate the development of necessary technical building blocks (protocols, open-source tools) in the public interest, fostering European sovereignty.
-         
+Addressing the identified technical deficits requires the collaborative development and broad adoption of common, open standards and reference implementations for consent management and permissioned data sharing.
+Such standards must prioritize: user-centricity (intuitive control, transparency), SME manageability (reduced implementation burden for common EU companies), robust security (data integrity, confidentiality), and comprehensive auditability (verifiable compliance, consent tracking), federation (no single point of failure).
+Open standards are essential for fostering interoperability, preventing vendor lock-in, lowering development costs, and promoting a level playing field for innovation. 
+
+While existing niche standardization efforts validate the feasibility and recognized need for such approaches within specific domains, they lack the universality required for a comprehensive, cross-sector solution, particularly in business-to-consumer (B2C) contexts.
+Initiatives like FHIR (Fast Healthcare Interoperability Resources) in healthcare [@noauthor_overview_nodate; @noauthor_not-od-19-122_nodate; @admin_mystery_2020] demonstrate the utility of domain-specific standards for data exchange and access management, yet a more broadly applicable framework is absent.
+
+There exists no established platform for B2C.
+One notable implementation the authors are aware of is https://mydatamyconsent.com.
+Other tools mainly are there for deleting unwated shared data like for example: https://www.permissionslipcr.com.
+Exchainging data for B2B purposes is even more important.
+To our best knowledge for sovereign data exchange only https://nexyo.io exists which takles issues of identity and permission management in a holstic solution.
+Both examples for b2b and b2c function as isolated solutions rather than components of an interoperable, standardized ecosystem, thereby highlighting the existing architectural gap.
+
+The sourcing of the eIDAS via SPRIND may be a good example.
+A viable strategy for gap closing involves establishing a collaborative European initiative, potentially structured after open innovation agencies like Germany's SPRIND [@noauthor_sprind_nodate], to fund, coordinate, and accelerate the creation of these essential technical building blocks as public digital infrastructure.
+SPRIND facilitates the implementation of eIDAS through the development of a open wallet application.
+Through targeted challenges, analogous to the EUDI Wallet prototype initiative [@noauthor_sprind_nodate], such a program could mobilize expertise from academia, industry, and open-source communities.
+The objective would be the production of a openly licensed protocol and reference software implementations, thereby enhancing European digital sovereignty and equipping users and organizations with practical tools to manage data sharing effectively and securely.
+Furthermore, multiple hosting entities of the federated platform could then provide such a consent managment as a service to simplify SME adoption.
+
 ## Specific Technical Considerations for Standardization Efforts 
 
-Address key ambiguities needing clear technical definitions/guidelines (based on your notes):
+Essential technical capabilities require explicit definition and standardization to enable the construction of trustworthy data sharing systems.
+This includes:
+- reliable, context-appropriate user identity verification
+- defining interoperable protocols for expressing, transmitting, and enforcing fine-grained authorization based on user consent
+- easily auditable consent by consumers: User-friendly interfaces for reviewing historical and current consent grants
+- withdrawl of consent must be possible: Verifiable deletion of the previously shared data
 
-- Scope of "making personal data available" (e.g., inclusion of AI model weights?).
-- Precise application and management of "consent expiry" (e.g., for core service vs. marketing?).
-- Practical, scalable interpretation of "durable medium".
-- Technical requirements for trustworthy "data intermediaries".
+Finally, architectural principles guiding standardization should prioritize resilience, user control, and federation.
+Centralized systems introduce single points of failure and control, whereas a federated approach enhances system resilience, mitigates vendor lock-in, aligns more closely with principles of data minimization and user sovereignty, and fosters a more diverse and competitive European digital market. 
 
 ## Conclusion 
 
-- Reiterate the urgency of addressing these technical gaps to achieve the dual goals of robust data protection and fostering innovation, particularly for European SMEs 
+Addressing the identified technical gaps in standardized data sharing and consent management protocols represents an urgent imperative for achieving Europe's dual objectives of robust data protection and a competitive, innovative digital single market.
+The current absence of common technical foundations generates significant operational friction, imposes disproportionate burdens on SMEs, and fails to equip users with effective controls for their data. 
 
-- End with a strong call for collaborative, open development of technical standards and tools.
-
-## draft thoughts and link material below
-
- Disproportionate Burden on SMEs:
-
-     Current regulatory demands and lack of standard tools create significant overhead, potentially favouring large, established (often non-EU) companies 
-
-.
- Difficulty for SMEs to implement sophisticated features like granular consent, timed expiry, or easy revocation, potentially hindering compliance and innovation 
-.
- Risk of overly complex configuration management even for simple processes.
-
-### structure outline
-
-- challenges
-  - lack of standard: missing protocol/interface
-  - flexibility vs. enforcable - the trust challenge when working with data
-  - adavantages for big (US) companies
-  - ever more important relevancy in the age of MCP and AI
-- suggestion: SPRIND like open innovation
-
-### challenges
-
-Challenges
-
-    - interface/Protocol for data exchange with permissions missing especiall with good UX
-
-    Lack of Universal Standards: There is no single, widely adopted standard or platform for granular, possibly even retractable data sharing.
-
-    Contractual Complexity: Effective data sharing with retractable consent often relies on clear, enforceable contracts and robust technical infrastructure. working with data requires flexibility (CSVs) [@comande_differential_2022]
-
-User Experience: Ensuring that users can easily understand, manage, and retract consent for individual data points remains a challenge for many platforms 
-[@comande_differential_2022]
-
-- advantageous for the big and established companies
-  - repeated config management may lead to overboarding complexity (for simple processes)
-  - data sharing may enable new intermediaries (but these do not come from the big i.e. like log in with apple, google, facebook)
-- missing established technical implementation. Complexity in tracking databreaches
-    - currently only focus on cookies
-    - and droppox style sharing
-    - further technical limitations (legal, technical vetting process)
-
-what is mcp: [@noauthor_model_nodate]
-
-relevancy to  MCP OAUTh [@peterson_oauths_2024]
-
-fix oauth in mcp [@noauthor_lets_2025]
-
-xss for mcp [@cross_s_2025]
-
-#### implementation managable for small-medium sized companies
-
-- european sized (small-medium) companies often do not benefit from the regulation
-- we want to improve the state for society but not overburden the majority of european companies
-
-#### missing established technical implementation
-
-- no established large-scale implemenation (world wide, but also not in europe)
-- some first moving applications
-
-notable examples
-- FHIR https://grants.nih.gov/grants/guide/notice-files/NOT-OD-19-122.html
-- https://www.capminds.com/blog/the-mystery-behind-fhir-in-healthcare-data-sharing/
-
-fhir [@noauthor_overview_nodate] [@noauthor_not-od-19-122_nodate, @admin_mystery_2020]
-
-b2c
-
-- https://mydatamyconsent.com/en-us
-
-b2b
-
-- https://nexyo.io/
-
-Here is a footnote reference,[^1].
-
-[^1]: Here is the footnote.
-
-overview
-
-- Personal Data Management Platforms
-- Consent Management Tools (to manage all the cookie consents in a single place)
-- Data Breach detection and handling
-
-### suggestions
-
-self create with public interest in mind
-
-openly
-
-#### SPRIND
-
-[@noauthor_sprind_nodate]
-example: https://www.sprind.org/en/actions/challenges/eudi-wallet-prototypes
-
-- open innovation
-- but on the european level for a souvereign Europe
-
-### notes
-
-
-makes personal data available, directly or indirectly>> da sollte klarer sein ob auch Model weights damit gemeint sind (nicht zu generisch)
-    consent expiry für was genau? Für Marketing Consent? Für Basis Consent der Dienst Erbringung?
-        Apple & Google zeigen ja wie es geht: Die Nutzer nicken bei JEDEM OS Upgrade was zumeist öfters als quartalsweise stattfindet neue AGB ab. Es ist also nicht undenkbar
-        ABER: für die meisten kleinen / europäischen Firmen so extrem schwer verwaltbar / der Aufwand ist massiv. Viele haben noch nicht mal die Verwaltung von zeitlosen Consents (bis auf Widerruf) richtig gut abgebildet
-    durable medium: Heißt das ausgedruckt? Falls ja - das wäre ökologisch nicht unbedingt zielführend
-    Intermediaries: Es ist schon länger der Traum sowas zu haben (Herr seiner Daten zu sein und sie flexibel überall zu haben bzw. ggf. monetarisieren zu können)
-        Aktuell ist mir kein ausgereifter bzw. auch verbreiteter Ansatz bekannt. Das heißt nicht, dass so etwas entwickelt werden kann. Ich bin mir aber nicht sicher, ob den Personen klar ist, was da für ein Aufwand dahinter steht. (plus auch Marktmacht notwendig ist)
-        Am ehesten kommen hier wieder die großen amerikanischen Player (log-in-with---XXXX) bzw. Freigabe gewisser (Teil-) Aspekte der Daten
-
-- https://www.permissionslipcr.com/
+Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting.
+Investing in these foundational elements as public digital infrastructure is crucial not only for streamlining regulatory compliance but also for empowering European businesses, cultivating user trust, and constructing a sovereign, resilient, and human-centric digital future.
