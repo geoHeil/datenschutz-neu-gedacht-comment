@@ -114,3 +114,6 @@ makes personal data available, directly or indirectly>> da sollte klarer sein ob
 TODOS:
 
 - NEED for DMA for MCP https://iamcharliegraham.substack.com/p/mcps-gatekeepers-and-the-future-of graham_mcps_2025
+
+There is a deliberate lack of implementation experience with large-scale, user-facing digital wallets in Germany and much of the EU. SPRIND’s competition is designed to foster innovation, compare multiple approaches, and gather empirical data on usability, security, and interoperability before making a national decision
+https://cms.system.sprind.org/uploads/EUDI_Wallet_Overview_20240709_EN_ffaec3139d.pdf
