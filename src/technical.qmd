@@ -75,6 +75,10 @@ Other tools mainly are there for deleting unwated shared data like for example: 
 Exchainging data for B2B purposes is even more important.
 To our best knowledge for sovereign data exchange only https://nexyo.io exists which takles issues of identity and permission management in a holstic solution.
 Both examples for b2b and b2c function as isolated solutions rather than components of an interoperable, standardized ecosystem, thereby highlighting the existing architectural gap.
+One of the best examples for national data exchange and consent management may be found in Estonia.
+X Road is the name of of the data interchange system in Estonia.
+It is also the backbone for managing healthcare data [@noauthor_estonian_2024].
+One of the applications for consent managemnt running on top of X Road is Estfeed [@news_estfeed_2020].
 
 The sourcing of the eIDAS via SPRIND may be a good example.
 A viable strategy for gap closing involves establishing a collaborative European initiative, potentially structured after open innovation agencies like Germany's SPRIND [@noauthor_sprind_nodate], to fund, coordinate, and accelerate the creation of these essential technical building blocks as public digital infrastructure.
