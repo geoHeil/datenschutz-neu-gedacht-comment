@@ -1,1 +1,18 @@
-hi from generic.
+
+## Core Technical Challenges in Data Sharing and Consent Management 
+
+1. What is the difference between 're-criticalisation' (Article 4, Definitions), and "processing of personal data to ... infer sensitive characteristics" (Article 6, high risk data activities)? On the surface, it looks to me like "inferring sensitive characteristics" is "re-criticalisation" if the data was originally de-criticalised. But often, I don't know if the data was de-criticalised.
+
+1. I am unsure whether the Article 9 exception for bias testing holds in the following situation: When I do bias testing, sometimes I have to first
+infer the sensitive characteristics, because they are not available in the test data.  Would that be considered re-criticalisation, and hence prohibited, if those sensitive characteristics had been present and were purposely removed? And generally, would it still be considered a high-risk data practice? What would be the consequences for a large-scale vs small-scale operator?
+
+1. I often work with digital rights organisations studying social media for their human rights impacts. I believe social media comments are personal data (even with access to only the comments, it is often possible to identify the person who made them)? In order to do this social media monitoring, often billions of comments from millions of users need to be processed. If I am an SME that derives most of its income from testing AI systems, doesn't that make me into a large-scale controller according to Article 4(2)?
+
+1. Further to the point of social media monitoring: an organisation could try to infer sensitive characteristics based on the comments - not just for bias testing, but to investigate other kinds of fundamental rights impacts. It is not clear if this would be covered by the exemption in Article 9 (but would be an important element in order for CSOs and academia to conduct research on systemic risks of online platforms under DSA)
+
+1. Regarding Article 10: if I train a general purpose model, training it might process sensitive data, but this would be OK, because the purpose is not related to sensitive characteristics? But then, if a down-stream operator uses the fully-trained general purpose model to infer sensitive characteristics, that then becomes unlawful?
+ 
+ 
+### Re-identification and re-criticalisation
+
+Article 5(2) prohibits, with exceptions, the re-identification and re-criticalisation of data.  However, as defined in Article 4, re-identification/re-criticalisation presumes the implicit knowledge by the data operator, that the underlying data were initially de-identified/de-criticalised.  This is an assumption that may not hold in practice, and the data operator could well be unaware that they are processing data that was de-identified/de-criticalised in origin.  Any prohibition on associating non-personal data with identified persons, or on inferring sensitive characteristics on non-critical personal data, should therefore hold irrespective of the "original" state of the data.
