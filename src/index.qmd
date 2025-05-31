@@ -6,14 +6,14 @@ authors:
     roles: writing
     corresponding: true
   - name: Georg Heiler
-    affiliation: Complexity Science Hub Vienna, Magenta
+    affiliation: Complexity Science Hub Vienna
     roles: writing
 bibliography: references.bib
 ---
 
 # introduction
 
-In an age dominated by the paradigm of data as gold, the GDPR has gained prominence among regulations - cherished and reviled at once, and emulated often enough to give rise to the term "Brussels effect".
+In an age dominated by the paradigm of "data as gold", the GDPR has gained prominence among regulations - cherished and reviled at once, and emulated often enough to give rise to the term "Brussels effect".
 Christiane Wendehorst's revisiting of the legal text, with the intention of simplifying compliance (especially for SMEs), adapting it to the realities of AI development, while at the same time enhancing Fundamental Rights protections, is a highly timely intervention.
 
 In the following, we examine Wendehorst's draft text from the perspective of an SME engaged in developing and deploying AI technologies.
@@ -129,91 +129,84 @@ requirements must be doable for SME and NGO
 
 # questions of technical feasibility
 
-## implementation complexity vs practicapility
+## exchanging data reliably and securely
 
-Once data is shared - it is hard to take it back.
-A fundamental conflict exists between the operational requirement for flexible data access and the necessity for robust technical and contractual frameworks to ensure trustworthy and enforceable consent restrictions.
-Meaningful data utilization in analytics or operational workflows, such as processing CSV files in visualization software, often necessitates access to data in relatively unprocessed formats. 
-However, once data is exposed in such formats, direct technical control over subsequent duplication, dissemination, or use in derived applications (e.g., AI model training) is diminished, necessitating primary reliance on contractual enforcement and institutional trust. <!-- this point deserves emphasis; this is not obvious to the non-technical reader -->
+High-quality AI thrives on fluid data flows, whereas iron-clad data protection demands strict containment.
+The instant a CSV is exported from a controlled database and emailed or copied, code-level safeguards vanish and only contractual promises remain.
+Meaningful analytics normally do require access to raw or lightly processed records; yet once data appear in that form, duplication, downstream repurposing, or silent use in model training becomes almost impossible to police technically.
+Sustainable governance therefore has to braid the two layers together: technically-enforced controls and legally enforceable duties expressed in contracts and regulatory obligations.
 
-In principle it would be possible to only share data with vetted connectors.
-But a solely technical solution would fall short.
-Regular contracts will be necessary to facilitate cross organizational trust.
-<!-- can you elaborate? -->
+Similar to the AI Act - the exact details of such technical control measures should be defined in a separate request for standardizaton - with the potential fall-back for common specifications in case it is impossible to attain a viable standard.
+A solution will need to combine vetted connectors to enforce technical means of control with contracts for cross-organizational trusted data exchange.
 
-- YY referenz AI act, standards + common specifications as fall back suggest to add extra article
-- XX technical solution needed
+A good example are data spaces [^1] and standards around them like DIN SPEC 27070 [@kembuegler_ids_2020].
+These systems descrbe reusable protocols for data exchange, identity and permission-handling.
+X-road [^2] in Estonia serves as a technical reference implementation at the level of a whole nation`s government based on these standards.
 
-## easy access
+[^1]: https://internationaldataspaces.org/ and the protocol https://docs.internationaldataspaces.org/ids-knowledgebase/dataspace-protocol
+[^2]: https://x-road.global/
 
-XX Thirdly, the requirement for information provision on a "durable medium" necessitates scalable, technically sound specifications that ensure verifiability and long-term accessibility beyond literal interpretations like paper printouts. <!-- examples would be good, here especially, but for the previous points as well -->
-
-standards needed - machine readable
-
-## problem of missing standards
-
-article 7 
-The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
-Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
-Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.
-
-
-xxx Secondly, the application and technical management of "consent expiry" demand practical, implementable models, potentially distinguishing between consent for core service delivery versus ancillary purposes (e.g., marketing) and acknowledging the operational constraints faced by SMEs relative to large platforms capable of enforcing frequent re-consents (e.g., via OS updates).
+## problem of missing standards (Article 7)
 
 Sometimes - new standards are enforced without the people at mind.
 Everyone has experienced GDPR cookie banners.
 And a lot of people just click something to make them go away.
 The obsolescence of the "Do Not Track" browser signal and the prevalence of ineffective cookie banners—often ignoring user preferences and lacking granular control—underscore this deficit, ultimately limiting user agency and introducing operational friction [@comande_differential_2022].
-<!--# what exactly does this mean? keep in mind that there was a recent ruling that TCF violates GDPR: https://www.dataprotectionauthority.be/citizen/the-market-court-rules-in-the-iab-europe-case ; also, this https://www.iccl.ie/digital-data/eu-ruling-tracking-based-advertising-by-google-microsoft-amazon-x-across-europe-has-no-legal-basis/  noting they are not at all neutral, but have good links, and an interesting analysis -->
+In fac,t the transparency & consent framework (TCF) as the grounds for advertising by US-based technology giants has been determined to be in place without a legal basis [@noauthor_market_2025], [@noauthor_eu_2025].
 
-Consequently, the absence of standardized interfaces renders robust auditing of consent and possible revocation very hard for users.
-
-- techn standard --> data spaces IDSA , xroad
-- rechtlich
-
-example fail: cookies ++ One example might be the single sign on (SSO) log-in with (Facebook, Google, Apple).
-Usually these companies provide means to manage access to their data.
+One more example is the feature of social login (login with Facebook Google, Apple, Microsoft).
+These companies provide means to manage access to their data.
 And due to their size a lot of other - also European players include theim in their digital service offerings.
 However, the functionality to review (audit) many grants accross the various providers is missing or automatic renewal process/expiry for grants.
+The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
+Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
+Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.
+In fact, in the case of cookie banners many actors employ dark patterns to trick people into giving more broad consent than initially intended.
 
-XX: auch leichtes geht nicht -das verschärfte schon garn icht ohne standards Art 7
+Article 7b refers to a "durable medium" which allows for easy access - online.
+This necessitates a more clearly spelled out solution.
+In particular it needs to include scalable, technically sound specifications that ensure:
+- verifiability (cryptographic signatures)
+- long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail)
+- machine readable structure
 
 # impact on SMEs and competitivity
 
-## EU vs US for SME
+## regulatory asymmetry
+
+Article 7a refers to consent expiry.
+Previously (see the cookie banner topic) we already established that the status quo is not satisfactory.
+The suggested implementation of consent expiry would be even more challenging do to a missing widely accepted standard.
+The application and technical management of "consent expiry" demand practical, implementable models, potentially distinguishing between consent for core service delivery versus ancillary purposes (e.g., marketing) and acknowledging the operational constraints faced by SMEs relative to large platforms capable of enforcing frequent re-consents (e.g., via OS updates).
+The absence of standardized interfaces renders robust auditing of consent and possible revocation very hard for users.
+As mentioned - the IDSA may pave the a first cornerstone of such a standard.
+
 Developing and maintaining sophisticated features—such as granular consent options, time-bound permission expiry, straightforward revocation mechanisms, and auditable consent logs demands significant technical expertise and resources, favouring larger, often non-EU, corporations.
-This disparity creates an uneven competitive landscape where SMEs face substantial overhead and complex configuration challenges even for basic data processing, potentially impeding regulatory compliance and constraining innovation within the European market. <!--# Note that this becomes one more "gate-keeping" function -->
+This disparity creates an uneven competitive landscape where SMEs face substantial overhead and complex configuration challenges even for basic data processing, potentially impeding regulatory compliance and constraining innovation within the European market.
+This literally becomes one more "gete-keeping" function.
 
 Unlike US-based companies which benefit from economies of scale, EU companies often are rather small.
-In fact, the small to medium sized companies (SME) are the backbone of the European economy. <!-- this would require some kind of reference? -->
+In fact, the small to medium sized companies (SME) are the backbone of the European economy [@noauthor_small_2025]. 
 However, these are overburdened by regulation especially without a clean and simple standard for implementation.
-Thus we must find an implementation of regulation which is supporting both goals: - European values (freedom, sovereignty) - Working with data (business)
+Thus we must find an implementation of regulation which is supporting both goals: - European values (freedom, sovereignty) - Working with data (business).
 
-
-## increased relevance for data sharing in an aera of AI
+## increased relevance for data exchange in the aera of AI
 
 The proliferation of Artificial Intelligence (AI) magnifies the urgency of resolving these technical challenges, as AI development lifecycles depend heavily on large-scale data access, necessitating more sophisticated, trustworthy, and auditable governance mechanisms.
 Training performant AI models requires substantial data inputs.
 However, the prevailing lack of standardized controls for data access, usage restriction enforcement, and consent management generates significant risks concerning privacy breaches.
-Consequently, establishing robust technical foundations for data governance vis consent management is not merely a compliance exercise but a critical prerequisite for enabling responsible and ethical AI innovation.
+See the report of Invariantlabs around exploiting githubs MCP for private repositories as a recent example [@beurer-kellner_github_2025].
+Consequently, establishing robust technical foundations for data governance via consent management is not merely a compliance exercise but a critical prerequisite for enabling responsible and ethical AI innovation.
 Furthermore, emerging paradigms for data ecosystems, including Model Context Protocols (MCP) [@noauthor_model_nodate] depend critically upon standardized and secure technical underpinnings for their viability and trustworthiness.
 Besides missing security and remote code execution challenges [@cross_s_2025], even established authorization layers such as OAuth face challenges[@peterson_oauths_2024, @noauthor_lets_2025] with MCP.
 
+Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025] due to gatekeeper functions of the established AI interfaces:
 
-- entry barriers
+- Whoever controls the LLM interface — Claude, Openai, etc. ... — controls what tools users see, which ones get triggered, and what responses actually get surfaced.
+- You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output (new AI gate-keeper function).
+- You may not even be allowed to install it (gatekeeper like appstores)
 
-
-<!-- Note that the EC is looking into OpenAI under the DSA, because it considers ChatGPT to be a VLOSE: https://www.mlex.com/mlex/artificial-intelligence/articles/2332484/chatgpt-faces-possible-designation-as-a-systemic-platform-under-eu-digital-law -->
-
-
-
-Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025]:
-
-> Whoever controls the LLM interface— Claude, ChatGPT, Cursor, etc...—controls what tools users see, which ones get triggered, and what responses actually get surfaced.
-> You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output.
-> You may not even be allowed to install it
-
-
+The EU has begun to analyze under the rulings of the digital markets act if OpenAI/ChatGPT is a systemic paltfor [@bertuzzi_chatgpt_2025].
 
 # standardization and interoperability as a possible solution
 
@@ -223,19 +216,20 @@ Open standards are essential for fostering interoperability, preventing vendor l
 
 While existing niche standardization efforts validate the feasibility and recognized need for such approaches within specific domains, they lack the universality required for a comprehensive, cross-sector solution, particularly in business-to-consumer (B2C) contexts.
 Initiatives like FHIR (Fast Healthcare Interoperability Resources) in healthcare [@noauthor_overview_nodate; @noauthor_not-od-19-122_nodate; @admin_mystery_2020] demonstrate the utility of domain-specific standards for data exchange and access management, yet a more broadly applicable framework is absent.
+For the domain of IOT the oneM2M onotolgies[^6] provide syntactic and semantic interoperability between several systems.
 
-There exists no established platform for B2C. <!-- to do what? -->
-One notable implementation the authors are aware of is https://mydatamyconsent.com.
-Other tools mainly are there for deleting unwanted shared data like for example: https://www.permissionslipcr.com.
+There exists no established platform for B2C for consent management.
+One notable implementation the authors are aware of is mydatamyconsent[^3].
+Other tools mainly are there for deleting unwanted shared data like for example[^4].
 Exchanging data for B2B purposes is even more important.
-To our best knowledge for sovereign data exchange only https://nexyo.io exists which tackles issues of identity and permission management in a holistic solution.
+To our best knowledge for sovereign data exchange only a limited set of solutions[^5] exists which tackles issues of identity and permission management in a holistic solution.
 Both examples for b2b and b2c function as isolated solutions rather than components of an interoperable, standardized ecosystem, thereby highlighting the existing architectural gap.
 One of the best examples for national data exchange and consent management may be found in Estonia.
 X Road is the name of of the data interchange system in Estonia.
-It is also the backbone for managing healthcare data [@noauthor_estonian_2024].
+It is also the backbone for managing healthcare data there [@noauthor_estonian_2024].
 One of the applications for consent managemnt running on top of X Road is Estfeed [@news_estfeed_2020].
 
-The sourcing of the eIDAS via SPRIND may be a good example.
+The sourcing of the eIDAS2 wallet via SPRIND may be a good example.
 A viable strategy for gap closing involves establishing a collaborative European initiative, potentially structured after open innovation agencies like Germany's SPRIND [@noauthor_sprind_nodate], to fund, coordinate, and accelerate the creation of these essential technical building blocks as public digital infrastructure.
 SPRIND facilitates the implementation of eIDAS through the development of an open wallet application.
 Through targeted challenges, analogous to the EUDI Wallet prototype initiative [@noauthor_sprind_nodate], such a program could mobilize expertise from academia, industry, and open-source communities.
@@ -248,6 +242,11 @@ This includes: - reliable, context-appropriate user identity verification - defi
 Finally, architectural principles guiding standardization should prioritize resilience, user control, and federation.
 Centralized systems introduce single points of failure and control, whereas a federated approach enhances system resilience, mitigates vendor lock-in, aligns more closely with principles of data minimization and user sovereignty, and fosters a more diverse and competitive European digital market.
 
+
+[^3]: https://mydatamyconsent.com
+[^4]: https://www.permissionslipcr.com
+[^5]: https://nexyo.io https://x-road.global https://www.roksnet.com/ https://planetway.com/en/planetcross/
+[^6]: https://www.onem2m.org/technical/onem2m-ontologies
 
 # summary
 
