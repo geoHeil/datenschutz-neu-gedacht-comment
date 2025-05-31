@@ -1,12 +1,17 @@
-
 ## Core discussion points 
 
-1. What is the difference between 're-criticalisation' (Article 4, Definitions), and "processing of personal data to ... infer sensitive characteristics" (Article 6, high risk data activities)? On the surface, it looks to me like "inferring sensitive characteristics" is "re-criticalisation" if the data was originally de-criticalised. But often, I don't know if the data was de-criticalised.
+1. What is the difference between 're-criticalisation' (Article 4, Definitions), and "processing of personal data to ... infer sensitive characteristics" (Article 6, high risk data activities)? On the surface, it looks to me like "inferring sensitive characteristics" is "re-criticalisation" if the data was originally de-criticalised.
+But often, I don't know if the data was de-criticalised.
 
-1. I am unsure whether the Article 9 exception for bias testing holds in the following situation: When I do bias testing, sometimes I have to first
-infer the sensitive characteristics, because they are not available in the test data.  Would that be considered re-criticalisation, and hence prohibited, if those sensitive characteristics had been present and were purposely removed? And generally, would it still be considered a high-risk data practice? What would be the consequences for a large-scale vs small-scale operator?
+1. I am unsure whether the Article 9 exception for bias testing holds in the following situation: When I do bias testing, sometimes I have to first infer the sensitive characteristics, because they are not available in the test data. 
+Would that be considered re-criticalisation, and hence prohibited, if those sensitive characteristics had been present and were purposely removed?
+And generally, would it still be considered a high-risk data practice?
+What would be the consequences for a large-scale vs small-scale operator?
 
-1. I often work with digital rights organisations studying social media for their human rights impacts. I believe social media comments are personal data (even with access to only the comments, it is often possible to identify the person who made them)? In order to do this social media monitoring, often billions of comments from millions of users need to be processed. If I am an SME that derives most of its income from testing AI systems, doesn't that make me into a large-scale controller according to Article 4(2)?
+1. I often work with digital rights organisations studying social media for their human rights impacts.
+I believe social media comments are personal data (even with access to only the comments, it is often possible to identify the person who made them)?
+In order to do this social media monitoring, often billions of comments from millions of users need to be processed.
+If I am an SME that derives most of its income from testing AI systems, doesn't that make me into a large-scale controller according to Article 4(2)?
 
 1. Further to the point of social media monitoring: an organisation could try to infer sensitive characteristics based on the comments - not just for bias testing, but to investigate other kinds of fundamental rights impacts. It is not clear if this would be covered by the exemption in Article 9 (but would be an important element in order for CSOs and academia to conduct research on systemic risks of online platforms under DSA)
 
@@ -15,19 +20,32 @@ infer the sensitive characteristics, because they are not available in the test 
  
 ### Re-identification and re-criticalisation
 
-Article 5(2) prohibits, with exceptions, the re-identification and re-criticalisation of data.  However, as defined in Article 4, re-identification/re-criticalisation presumes the implicit knowledge by the data operator, that the underlying data were initially de-identified/de-criticalised.  This is an assumption that may not hold in practice, and the data operator could well be unaware that they are processing data that was de-identified/de-criticalised in origin.  Any prohibition on associating non-personal data with identified persons, or on inferring sensitive characteristics on non-critical personal data, should therefore hold irrespective of the "original" state of the data.
+Article 5(2) prohibits, with exceptions, the re-identification and re-criticalisation of data. 
+However, as defined in Article 4, re-identification/re-criticalisation presumes the implicit knowledge by the data operator, that the underlying data were initially de-identified/de-criticalised.
+This is an assumption that may not hold in practice, and the data operator could well be unaware that they are processing data that was de-identified/de-criticalised in origin.
+Any prohibition on associating non-personal data with identified persons, or on inferring sensitive characteristics on non-critical personal data, should therefore hold irrespective of the "original" state of the data.
 
 Suggestion for Article 5:
 It should be prohibited to *identify* (i.e. link to a specific person) purportedly anonymized personal data; or to infer *sensitive characteristics* from purportedly non-critical data. With exceptions as listed.
-(See, for example, using aspects such as hair style or color, attire, to identify a specific person - https://www.technologyreview.com/2025/05/12/1116295/how-a-new-type-of-ai-is-helping-police-skirt-facial-recognition-bans/; or, using samples of text to infer ethnicity)
+(See, for example, using aspects such as hair style or color, attire, to identify a specific person - https://www.technologyreview.com/2025/05/12/1116295/how-a-new-type-of-ai-is-helping-police-skirt-facial-recognition-bans/; or, using samples of text to infer ethnicity).
 
-It should be prohibited to use sensitive characteristics of one person, to infer those of another (for example, genetic information about one consenting adult, reveals a lot of information about biologically related individuals, even if not related; similarly, sensitive characteristics about one consenting individual in a network, can reveal the same sensitive information about other persons in the same network). Is it possible to be careful about proxies? so the system is not explicitly inferring the sensitive characteristics, but using "people similar to X" as a proxy, to implicitly mean that "people similar to X" have the same sensitive characteristics as X?
+It should be prohibited to use sensitive characteristics of one person, to infer those of another (for example, genetic information about one consenting adult, reveals a lot of information about biologically related individuals, even if not consenting; similarly, sensitive characteristics about one consenting individual in a network, can reveal the same sensitive information about other persons in the same network).
+Is it possible to be careful about proxies?
+- So the system is not explicitly inferring the sensitive characteristics, but using "people similar to X" as a proxy, to implicitly mean that "people similar to X" have the same sensitive characteristics as X? And, this information is used to your detriment.
 
-Article 5(2)e:
+## Article 5(2)e
 It is difficult for the data subject to give consent to any processing of de-identified data (if the data is de-identified, how do you know whom to ask for consent?)
-This can only be done in "blanket" terms - for example, if the entire dataset consists of people who have given their prior consent to de-identification.  And if at least 1 person in the dataset refuses, the de-identification of the entire dataset becomes impossible (how do you know which items to *not* de-identify?)
+This can only be done in "blanket" terms - for example, if the entire dataset consists of people who have given their prior consent to de-identification.
+And if at least 1 person in the dataset refuses, the de-identification of the entire dataset becomes impossible (how do you know which items to *not* de-identify?)
 
-Question about Article 9 (1a):
+## Article 7
+
+- derivative content (ai generated) including embeddings (see paper) may still be senstive/peronsal data
+- is llm iferenced/hallucinated data still personal data?
+
+
+## Question about Article 10 referencing Article 9 (1a):
+
 Is this to be read as:
 1. the data is (biometric or genetic in nature and allows the unique identification of a natural person) or is (inherently and specifically linked with sensitive characteristics); or as
 1. the data is biometric or genetic in nature and [(allows the unique identification of a natural person) or (is inherently and specifically linked with sensitive characteristics)].
@@ -36,14 +54,9 @@ Presumably, interpretation 1 is intended. But the question is, why data that is 
 
 
 The exceptions in Article 10 need to explicitly cover:
-* uses of data to investigate biases, discrimination, or other Fundamental Rights harms to individuals or society;
-In particular, this is needed for effective application of AI Act, as well as DSA Article 40.
 
-The exceptions to Article 10 should also explicitly cover:
+* uses of data to investigate biases, discrimination, or other Fundamental Rights harms to individuals or society; In particular, this is needed for effective application of AI Act, as well as DSA Article 40. 
 * logging of data necessary to investigate biases, discrimination, or other Fundamental Rights harms
 * storage of data used in investigating such harms, to allow for reproducibility and verifiability of results
 
 The logging and storage should conform to strict technical safeguards for the protection of such data, preferably according to harmonised standards developed expressly for this purpose.
-
-
-

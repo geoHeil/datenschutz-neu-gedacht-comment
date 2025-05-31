@@ -4,40 +4,7 @@ editor:
     wrap: sentence
 ---
 
-## Core Technical Challenges in Data Sharing and Consent Management <!--# it would be good to link each of the points directly with Articles in the draft -->
-
-### Lack of standardized protocols 
-
-The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
-Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
-Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.
-
-### Misguided Cookie Consent Management
-
-Sometimes - new standards are enforced without the people at mind.
-Everyone has experienced GDPR cookie banners.
-And a lot of people just click something to make them go away.
-The obsolescence of the "Do Not Track" browser signal and the prevalence of ineffective cookie banners—often ignoring user preferences and lacking granular control—underscore this deficit, ultimately limiting user agency and introducing operational friction [@comande_differential_2022].
-<!--# what exactly does this mean? keep in mind that there was a recent ruling that TCF violates GDPR: https://www.dataprotectionauthority.be/citizen/the-market-court-rules-in-the-iab-europe-case ; also, this https://www.iccl.ie/digital-data/eu-ruling-tracking-based-advertising-by-google-microsoft-amazon-x-across-europe-has-no-legal-basis/  noting they are not at all neutral, but have good links, and an interesting analysis -->
-
-Consequently, the absence of standardized interfaces renders robust auditing of consent and possible revocation very hard for users.
-
-### EU vs. USA
-
-Developing and maintaining sophisticated features—such as granular consent options, time-bound permission expiry, straightforward revocation mechanisms, and auditable consent logs demands significant technical expertise and resources, favouring larger, often non-EU, corporations.
-This disparity creates an uneven competitive landscape where SMEs face substantial overhead and complex configuration challenges even for basic data processing, potentially impeding regulatory compliance and constraining innovation within the European market. <!--# Note that this becomes one more "gate-keeping" function -->
-
-Unlike US-based companies which benefit from economies of scale, EU companies often are rather small.
-In fact, the small to medium sized companies (SME) are the backbone of the European economy. <!-- this would require some kind of reference? -->
-However, these are overburdened by regulation especially without a clean and simple standard for implementation.
-Thus we must find an implementation of regulation which is supporting both goals: - European values (freedom, sovereignty) - Working with data (business)
-
-One example might be the single sign on (SSO) log-in with (Facebook, Google, Apple).
-Usually these companies provide means to manage access to their data.
-And due to their size a lot of other - also European players include theim in their digital service offerings.
-However, the functionality to review (audit) many grants accross the various providers is missing or automatic renewal process/expiry for grants.
-<!-- not sure what you are getting at? -->
-
+## Article 5e
 ### Implementation complexity vs practicapility
 
 Once data is shared - it is hard to take it back.
@@ -50,7 +17,57 @@ But a solely technical solution would fall short.
 Regular contracts will be necessary to facilitate cross organizational trust.
 <!-- can you elaborate? -->
 
-## Heightened Relevance in the Era of AI and Advanced Data Ecosystems
+- YY referenz AI act, standards + common specifications as fall back suggest to add extra article
+- XX technical solution needed
+
+### easy access
+
+XX Thirdly, the requirement for information provision on a "durable medium" necessitates scalable, technically sound specifications that ensure verifiability and long-term accessibility beyond literal interpretations like paper printouts. <!-- examples would be good, here especially, but for the previous points as well -->
+
+standards needed - machine readable
+
+
+## Article 7
+
+### Technical
+
+The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
+Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
+Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.
+
+
+xxx Secondly, the application and technical management of "consent expiry" demand practical, implementable models, potentially distinguishing between consent for core service delivery versus ancillary purposes (e.g., marketing) and acknowledging the operational constraints faced by SMEs relative to large platforms capable of enforcing frequent re-consents (e.g., via OS updates).
+
+Sometimes - new standards are enforced without the people at mind.
+Everyone has experienced GDPR cookie banners.
+And a lot of people just click something to make them go away.
+The obsolescence of the "Do Not Track" browser signal and the prevalence of ineffective cookie banners—often ignoring user preferences and lacking granular control—underscore this deficit, ultimately limiting user agency and introducing operational friction [@comande_differential_2022].
+<!--# what exactly does this mean? keep in mind that there was a recent ruling that TCF violates GDPR: https://www.dataprotectionauthority.be/citizen/the-market-court-rules-in-the-iab-europe-case ; also, this https://www.iccl.ie/digital-data/eu-ruling-tracking-based-advertising-by-google-microsoft-amazon-x-across-europe-has-no-legal-basis/  noting they are not at all neutral, but have good links, and an interesting analysis -->
+
+Consequently, the absence of standardized interfaces renders robust auditing of consent and possible revocation very hard for users.
+
+- techn standard --> data spaces IDSA , xroad
+- rechtlich
+
+example fail: cookies ++ One example might be the single sign on (SSO) log-in with (Facebook, Google, Apple).
+Usually these companies provide means to manage access to their data.
+And due to their size a lot of other - also European players include theim in their digital service offerings.
+However, the functionality to review (audit) many grants accross the various providers is missing or automatic renewal process/expiry for grants.
+
+XX: auch leichtes geht nicht -das verschärfte schon garn icht ohne standards Art 7
+
+### Strategic
+
+Developing and maintaining sophisticated features—such as granular consent options, time-bound permission expiry, straightforward revocation mechanisms, and auditable consent logs demands significant technical expertise and resources, favouring larger, often non-EU, corporations.
+This disparity creates an uneven competitive landscape where SMEs face substantial overhead and complex configuration challenges even for basic data processing, potentially impeding regulatory compliance and constraining innovation within the European market. <!--# Note that this becomes one more "gate-keeping" function -->
+
+Unlike US-based companies which benefit from economies of scale, EU companies often are rather small.
+In fact, the small to medium sized companies (SME) are the backbone of the European economy. <!-- this would require some kind of reference? -->
+However, these are overburdened by regulation especially without a clean and simple standard for implementation.
+Thus we must find an implementation of regulation which is supporting both goals: - European values (freedom, sovereignty) - Working with data (business)
+
+
+### Heightened Relevance in the Era of AI and Advanced Data Ecosystems
 
 The proliferation of Artificial Intelligence (AI) magnifies the urgency of resolving these technical challenges, as AI development lifecycles depend heavily on large-scale data access, necessitating more sophisticated, trustworthy, and auditable governance mechanisms.
 Training performant AI models requires substantial data inputs.
@@ -59,21 +76,19 @@ Consequently, establishing robust technical foundations for data governance vis 
 Furthermore, emerging paradigms for data ecosystems, including Model Context Protocols (MCP) [@noauthor_model_nodate] depend critically upon standardized and secure technical underpinnings for their viability and trustworthiness.
 Besides missing security and remote code execution challenges [@cross_s_2025], even established authorization layers such as OAuth face challenges[@peterson_oauths_2024, @noauthor_lets_2025] with MCP.
 
+
+- entry barriers
+
+
+<!-- Note that the EC is looking into OpenAI under the DSA, because it considers ChatGPT to be a VLOSE: https://www.mlex.com/mlex/artificial-intelligence/articles/2332484/chatgpt-faces-possible-designation-as-a-systemic-platform-under-eu-digital-law -->
+
+
+
 Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025]:
 
 > Whoever controls the LLM interface— Claude, ChatGPT, Cursor, etc...—controls what tools users see, which ones get triggered, and what responses actually get surfaced.
 > You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output.
 > You may not even be allowed to install it
-
-<!-- Note that the EC is looking into OpenAI under the DSA, because it considers ChatGPT to be a VLOSE: https://www.mlex.com/mlex/artificial-intelligence/articles/2332484/chatgpt-faces-possible-designation-as-a-systemic-platform-under-eu-digital-law -->
-
-
-## Remarks for refinement
-
-Effective standardization must provide precise technical definitions and operational guidelines for key terms and requirements frequently subject to ambiguity in regulatory texts and practical implementations.
-Firstly, the precise scope of actions such as "making personal data available" requires clarification—specifically, whether it encompasses derived data artifacts like trained AI model weights.
-Secondly, the application and technical management of "consent expiry" demand practical, implementable models, potentially distinguishing between consent for core service delivery versus ancillary purposes (e.g., marketing) and acknowledging the operational constraints faced by SMEs relative to large platforms capable of enforcing frequent re-consents (e.g., via OS updates).
-Thirdly, the requirement for information provision on a "durable medium" necessitates scalable, technically sound specifications that ensure verifiability and long-term accessibility beyond literal interpretations like paper printouts. <!-- examples would be good, here especially, but for the previous points as well -->
 
 ## Towards Solutions: A Call for Open Innovation and Standardization
 

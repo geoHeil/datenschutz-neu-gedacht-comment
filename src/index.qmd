@@ -1,5 +1,8 @@
 ---
-title: Kommentar Datenschutz
+title: Technical commentary on: Tentative Academic Discussion Draft (version 1.1) of a
+Regulation on the protection of personal data in the context of artificial intelligence and
+the data economy and amending Regulation (EU) 2024/1689
+(‘AI Data Protection Regulation’)
 authors:
   - name: Rania Wazir
     affiliation: Leiwand.ai
@@ -13,14 +16,11 @@ bibliography: references.bib
 
 # Introduction
 
--   Acknowledge the evolving regulatory landscape, aiming to adapt data protection for emerging technologies like AI while supporting innovation and easing the burden on SMEs.
--   State the comment's purpose: To highlight key technical challenges in implementing effective, user-centric data control mechanisms and propose a collaborative path towards practical solutions.
+In an age dominated by the paradigm of data as gold, the GDPR has gained prominence among regulations - cherished and reviled at once, and emulated often enough to give rise to the term "Brussels effect".
+Christiane Wendehorst's revisiting of the legal text, with the intention of simplifying compliance (especially for SMEs), adapting it to the realities of AI development, while at the same time enhancing Fundamental Rights protections, is a highly timely intervention.
 
-(This is a simple placeholder for the manuscript's main document [@comande_differential_2022].)
-
-In an age dominated by the paradigm of data as gold, the GDPR has gained prominence among regulations -- cherished and reviled at once, and emulated often enough to give rise to the term "Brussels effect". Christiane Wendehorst's revisiting of the legal text, with the intention of simplifying compliance (especially for SMEs), adapting it to the realities of AI development, while at the same time enhancing Fundamental Rights protections, is a highly timely intervention.
-
-In the following, we examine Wendehorst's draft text from the perspective of an SME engaged in developing and deploying AI technologies. We ask some clarification questions regarding concepts introduced in the text, and then take a deep dive into the technicalities of implementing some of the requirements, discussing technical challenges, describing potential pitfalls, and suggesting possible solutions.
+In the following, we examine Wendehorst's draft text from the perspective of an SME engaged in developing and deploying AI technologies.
+We ask some clarification questions regarding concepts introduced in the text, and then take a deep dive into the technicalities of implementing some of the requirements, discussing technical challenges, describing potential pitfalls, and suggesting possible solutions.
 
 # generic comment
 
@@ -29,9 +29,5 @@ In the following, we examine Wendehorst's draft text from the perspective of an 
 # Technical comment
 
 {{< include technical.qmd >}}
-
-# demo python computation
-
-{{< include hello.qmd >}}
 
 # references
