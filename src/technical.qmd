@@ -7,30 +7,14 @@ editor:
 ## Article 5e
 ### Implementation complexity vs practicapility
 
-Once data is shared - it is hard to take it back.
-A fundamental conflict exists between the operational requirement for flexible data access and the necessity for robust technical and contractual frameworks to ensure trustworthy and enforceable consent restrictions.
-Meaningful data utilization in analytics or operational workflows, such as processing CSV files in visualization software, often necessitates access to data in relatively unprocessed formats. 
-However, once data is exposed in such formats, direct technical control over subsequent duplication, dissemination, or use in derived applications (e.g., AI model training) is diminished, necessitating primary reliance on contractual enforcement and institutional trust. <!-- this point deserves emphasis; this is not obvious to the non-technical reader -->
 
-In principle it would be possible to only share data with vetted connectors.
-But a solely technical solution would fall short.
-Regular contracts will be necessary to facilitate cross organizational trust.
-<!-- can you elaborate? -->
-
-- YY referenz AI act, standards + common specifications as fall back suggest to add extra article
-- XX technical solution needed
-
-### easy access
-
-XX Thirdly, the requirement for information provision on a "durable medium" necessitates scalable, technically sound specifications that ensure verifiability and long-term accessibility beyond literal interpretations like paper printouts. <!-- examples would be good, here especially, but for the previous points as well -->
-
-standards needed - machine readable
 
 
 ## Article 7
 
 ### Technical
 
+article 7 
 The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems.
 Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions.
 Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms.

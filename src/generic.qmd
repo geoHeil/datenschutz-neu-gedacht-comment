@@ -1,5 +1,6 @@
 ## Core discussion points 
 
+
 1. What is the difference between 're-criticalisation' (Article 4, Definitions), and "processing of personal data to ... infer sensitive characteristics" (Article 6, high risk data activities)? On the surface, it looks to me like "inferring sensitive characteristics" is "re-criticalisation" if the data was originally de-criticalised.
 But often, I don't know if the data was de-criticalised.
 
