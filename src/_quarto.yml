@@ -5,10 +5,10 @@ manuscript:
   article: index.qmd
 
 format:
-  # html:
-  #   comments:
-  #     hypothesis: true
-  #   output-file: "KommentarDatenschutz"
+  html:
+    comments:
+      hypothesis: true
+    output-file: "KommentarDatenschutz"
   docx:
     output-file: "KommentarDatenschutz"
     toc: true

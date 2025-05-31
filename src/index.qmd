@@ -21,7 +21,7 @@ We ask some clarification questions regarding concepts introduced in the text, a
 
 # questions of clarity
 
-## differences between 're-criticalisation' and "processing of personal data to infer sensitive characteristics
+## differences between "re-criticalisation" and "processing of personal data to infer sensitive characteristics"
 
 What is the difference between 're-criticalisation' (Article 4, Definitions), and "processing of personal data to ... infer sensitive characteristics" (Article 6, high risk data activities)?
 On the surface, it looks to me like "inferring sensitive characteristics" is "re-criticalisation" if the data was originally de-criticalised.
@@ -40,24 +40,42 @@ It should be prohibited to use sensitive characteristics of one person, to infer
 Is it possible to be careful about proxies?
 - So the system is not explicitly inferring the sensitive characteristics, but using "people similar to X" as a proxy, to implicitly mean that "people similar to X" have the same sensitive characteristics as X? And, this information is used to your detriment.
 
-### Article 5(2)e
+### Feasibility of Data-Subject Consent in De-identified Contexts (Article 5(2)e)
 It is difficult for the data subject to give consent to any processing of de-identified data (if the data is de-identified, how do you know whom to ask for consent?)
 This can only be done in "blanket" terms - for example, if the entire dataset consists of people who have given their prior consent to de-identification.
 And if at least 1 person in the dataset refuses, the de-identification of the entire dataset becomes impossible (how do you know which items to *not* de-identify?)
 
-### article 7 and 10
+### High-Risk Obligations for Large-Scale Controllers (article 7 and 10)
 
-There are different categories of ai derivative content:
+There are different categories of ai derivative content.
+
+<!--
 
 - ai model weights
 - embeddings
 - generative data
 - usage charactersitics
 
+-->
+
+| Artefact                              | Typical content                                                                                       | When it *is* personal data                                                                                                                          | Suggested compliance handling |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Model weights**                     | Billions of parameters storing an ultra-compressed statistical representation of the training corpus. | Only if an individual can be singled out by *querying the model* (model memorisation).                                                              | Treat weights as *bulk-data* under Art. 11. Run privacy-audit tests (canary exposure, membership inference). If leakage is found, treat as “integral part” ⇒ limited data-subject rights per Art. 12 (2). |
+| **Embeddings**                        | Dense vectors for documents or user profiles.                                                         | New research shows raw text can be reconstructed from vectors [@jha_harnessing_2025]; therefore embeddings may *remain* personal data even after dimensionality reduction. | Mandate de-criticalisation at generation time, log *embedding provenance*, and forbid re-identification (Art. 5 § 2). |
+| **Generative output**                 | Text, images, code created at inference.                                                              | (a) If the prompt already contains personal data, or (b) if the output contains a *false but identifiable* statement about a person.                | The output is *fresh* personal data. Up-stream provider must offer a “right against harmful mention” (Art. 12 § 2 b i) and, where style-cloning is involved, a “right not to be cloned”. |
+| **Usage characteristics / telemetry** | Generated data of model                   | Intent matters.                  | Regarding Article 10: if I train a general purpose model, training it might process sensitive data, but this would be OK, because the purpose is not related to sensitive characteristics? But then, if a down-stream operator uses the fully-trained general purpose model to infer sensitive characteristics, that then becomes unlawful? |
+
+
+> TODO: Rania - warning right against harmful mention/no style cloning is currently technically impossible - consider this table as a draft - it may need refinement. Perhaps the table is not the right structure and we should proceed in the original linear heading based approach
+
+
+<!--
 #### ai model weights
 
 Trained models store their learnings as many numbers - commonly referred to as model weights.
 Large language models store billions of such parameters to have a lossy, compressed representation of the input data they were trained with.
+
+
 
 #### embeddings
 
@@ -70,8 +88,11 @@ A recent publication has shown that the sensitive raw data may be retrievable fr
 
 #### usage characteristics
 
+(Non-Sensitive Use of Sensitive Data (Art. 10))
+
 Regarding Article 10: if I train a general purpose model, training it might process sensitive data, but this would be OK, because the purpose is not related to sensitive characteristics? But then, if a down-stream operator uses the fully-trained general purpose model to infer sensitive characteristics, that then becomes unlawful?
 
+-->
 ## fundamental rights - exceptions to article 9
 
 I am unsure whether the Article 9 exception for bias testing holds in the following situation: When I do bias testing, sometimes I have to first infer the sensitive characteristics, because they are not available in the test data. 
