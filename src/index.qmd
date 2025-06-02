@@ -31,7 +31,7 @@ We therefore suggest that in Article 5, it should be prohibited to *identify* (i
 
 This is not just a theoretical concern - already today, AI technologies are in use that:
 
--   use aspects such as hair style or color, attire, to identify a specific person [@odonnell_how_nodate];
+-   use features such as hair style or color, attire and accessories to identify a specific person [@odonnell_how_nodate];
 
 -   use samples of text to infer ethnicity, age, or gender.
 
@@ -42,9 +42,9 @@ Two further aspects of the processing of personal data need clarification:
 -   genetic information about one consenting adult, reveals a lot of information about biologically related individuals, even if not consenting;
 -   similarly, sensitive characteristics about one individual in a network, can reveal the same sensitive information about other persons in the same network.
 
-In such cases, we suggest that such processing should be prohibited, as a form of criticalisation. Furthermore, it should be clarified that the exception under consent applies only when the consent is obtained from *both* parties: the individual whose data already contains sensitive characteristics, as well as the individual whose sensitive characteristics are being inferred.
+In such cases, we suggest that such processing should be prohibited, as a form of criticalisation. Furthermore, it should be clarified that the exception under consent applies only when the consent is obtained from *both* parties: the individual whose data already contains sensitive characteristics, as well as the individual whose sensitive characteristics are being inferred. Note that this also covers the case of groups or families: consent needs to be obtained *from each person in the group whose sensitive characteristics will be inferred*.
 
-> TODO: Rania - how about full groups/families? Is it even practical to get the conset of all in a famil yof 4-6 people?
+> TODO: Rania - how about full groups/families? Is it even practical to get the conset of all in a famil yof 4-6 people? DONE. Ja, das bezieht sich ja auf jeden einzelnen, dessen sensitive charcteristics inferred werden - und nicht unbedingt pauschal auf die ganze Familie.
 
 2.  The massive amounts of data available for processing nowadays often means that an AI system is not explicitly inferring sensitive characteristics, but is rather adopting a proxy.\
     For example, a system developed to categorise online shoppers, might group them into various "shopper profiles".\
@@ -52,7 +52,13 @@ In such cases, we suggest that such processing should be prohibited, as a form o
     As long as these profiles are restricted to the online shopping domain, this may not be a problem.\
     However, taking the online shopping data, and the corresponding shopper profiles, and applying them in other domains - such as credit risk evaluation, or predictive policing - could be equivalent to using a proxy for sensitive characteristics.\
     For example, using "shopper profile A" to help infer credit default risk could be a proxy for gender, and this information is then used to the detriment of the data subject.\
-    Therefore, profiling should be subject to further restrictions. In particular, prior to their usage in decisions that can negatively impact data subjects; and prior to their sharing with a third party, profiles should be tested for their correlation to sensitive characteristics, and where this is found to be true, their usage be prohibited.
+    Therefore, profiling should be subject to further restrictions. In particular, profiles should be tested for their correlation to sensitive characteristics
+    
+    - prior to their usage in decisions that can negatively impact data subjects; 
+    - prior to their sharing with a third party. 
+    
+    Where the profiles are found to correlate with sensitive characteristics, their usage should be prohibited.
+    
 
 ### Feasibility of Data-Subject Consent in De-identified Contexts (Article 5(2)e)
 
@@ -60,54 +66,34 @@ Article 5(2e) provides a consent-based exception to the prohibition on data (re)
 
 ### High-Risk Obligations for Large-Scale Controllers (article 7 and 10)
 
-There are different categories of AI derivative content. These categories can, under different circumstances, be considered *personal data*. The table below provides an overview of the different categories, the circumstances under which they could be considered personal data, and suggestions for compliance handling.
+There are three categories of AI derivative content which can, under different circumstances, be considered *personal data*. The table below provides an overview of the various categories, the circumstances under which they could be considered personal data, and suggestions for compliance handling.
 
-```{=html}
-<!--
-
-- ai model weights
-- embeddings
-- generative data
-- usage charactersitics
-
--->
-```
 
 | Artefact | Typical content | When it *is* personal data | Suggested compliance handling |
 |------------------|------------------|------------------|-------------------|
-| **Model weights** | Billions of parameters storing an ultra-compressed statistical representation of the training corpus. | Only if an individual can be singled out by *querying the model* (model memorisation). | Treat weights as *bulk-data* under Art. 11. Run privacy-audit tests (such as canary exposure, membership inference). If leakage of personal data is detected, treat this as an “integral part of the technology” as per Article 12 (2); this then guarantees some data-subject rights.|
-| **Embeddings** | Dense vectors representing words, documents or user profiles. | New research shows raw text can be reconstructed from vectors [@jha_harnessing_2025]; therefore embeddings may *remain* personal data even after dimensionality reduction. | Require de-criticalisation at generation time, log *embedding provenance*, and forbid re-identification (Art. 5 § 2). |
-| **Generative output** | Text, images, code created at inference. | \(a\) If the prompt already contains personal data, or (b) if the output contains a *false but identifiable* statement about a person. | The output is *fresh* personal data. Up-stream provider must offer a “right against harmful mention” (Art. 12 § 2 b i) and, where style-cloning is involved, a “right not to be cloned”. NOTE: this is currently technically not feasible. It is more likely that the onus of verifying personal information produced by the AI system; and of avoiding "style cloning", will fall on the user of the system.|
+| **Model weights** | Billions of parameters storing an ultra-compressed statistical representation of the training corpus. | Only if an individual can be singled out by *querying the model* (model memorisation). | Treat weights as *bulk-data* under Art. 11. Run privacy-audit tests (such as canary exposure, membership inference). If leakage of personal data is detected, treat this as an “integral part of the technology” as per Article 12 (2); this then guarantees some data-subject rights. |
+| **Embeddings** | Dense vectors representing words, documents or user profiles. | New research shows raw text can be reconstructed from vectors [@jha_harnessing_2025]; therefore embeddings may *remain* personal data even after dimensionality reduction. | Document *embedding provenance* (which we take here to be the provenance of the training data, and any prior embeddings that the current embedding is derived from); require de-criticalisation at inference time (i.e. not during training, but when new output is generated), and forbid re-identification by down-stream users (Art. 5 § 2). |
+| **Generative output** | Text, images, code created at inference. | \(a\) If the prompt already contains personal data, or (b) if the output contains a *false but identifiable* statement about a person. | The output is *fresh* personal data. Up-stream provider must offer a “right against harmful mention” (Art. 12 § 2 b i) and, where style-cloning is involved, a “right not to be cloned”. NOTE: this is currently technically not feasible. It is more likely that the onus of verifying personal information produced by the AI system; and of avoiding "style cloning", will fall on the user of the system. |
 
-In order to protect data subjects' rights, some requirements may fall on the user of the AI system, rather than on the data processor.  For example, while the bulk processing of data can include sensitive characteristics, when it comes to a down-stream operator who wants to use the trained system to infer sensitive characteristics, this should be prohibited.  In addition, attempts to extract personal data from the model (re-identification) should also be forbidden.  The AI system user should also be responsible for de-criticalising any personal data generated by the system.
-
-
-> TODO: Rania - warning right against harmful mention/no style cloning is currently technically impossible - consider this table as a draft - it may need refinement. Perhaps the table is not the right structure and we should proceed in the original linear heading based approach. DONE
-> TODO Georg: I like the table structure.  I have added the technical feasibility warning directly in the table.  In addition:  for the "Embeddings" heading: Is it technically feasible to require de-criticalisation of bulk data used in training the model? Does "at generation time" = at inference time?  what is "embedding provenance"?  and are you saying it is the _user_ of the LLM who has to de-criticalise any generated output, and who is forbidden to use the LLM for re-identification?  For the "generative output" heading: who is the "up-stream" provider?  
-Finally, I am not sure the "usage characteristics" belongs in the table.  I have pulled it out.
-
-> - generation time: yes inference
-> - embedding provenance is so far a  term not well defined - but probably should be related to normal data provenance (especially given that new paper)
-> - I think *the user* is the whole point (concluding after the table) who is using the technology for good or bad and who has to have the right intentions and final oversight
-> - agreed usage characteristics should be down
+In order to protect data subjects' rights, some requirements may fall on the *user* of the AI system, rather than on the data processor. For example, while the bulk processing of data can include sensitive characteristics, when it comes to a down-stream operator who wants to use the trained system to infer sensitive characteristics, this should be prohibited. In addition, attempts to extract personal data from the model (re-identification) should also be forbidden (see Table above, for "generative output"). The AI system user should also be responsible for de-criticalising any personal data generated by the system.
 
 ## fundamental rights - exceptions to article 9 GDPR
 
+The meaning of draft Article 10 (1a) is ambiguous. Is this to be read as: 
 
-The meaning of draft Article 10 (1a) is ambiguous.
-Is this to be read as: 
 1. the data is (biometric or genetic in nature and allows the unique identification of a natural person) or is (inherently and specifically linked with sensitive characteristics); or as 
-1. the data is biometric or genetic in nature and \[(allows the unique identification of a natural person) or (is inherently and specifically linked with sensitive characteristics)\].
 
-Presumably, interpretation 1 is intended?
+1. the data is \[biometric or genetic in nature\] and \[(allows the unique identification of a natural person) or (is inherently and specifically linked with sensitive characteristics)\].
 
-In order to do bias testing, it is often necessary to infer sensitive characteristics and it is unclear, whether the exceptions provided in draft Article 10(2), apply also to prohibitions in the draft Article 5(2). In addition, such an exception would be necessary - not just for bias testing, but for determining other Fundamental Rights harms as well (for example, in order for CSOs and academia to conduct research on systemic risks of online platforms under DSA). Generally, such activities, while exempt from the prohibitions, should however be considered high risk.
+Presumably, interpretation 1 is intended, as this seems closer to the original GDPR Article 9?  Interpretation 2 begs the question, why practices should be forbidden for biometric or genetic data, but not for other types of data that fulfil the same object (of allowing the unique identification of a natural person, or of being inherently and specifically linked to sensitive characteristics).
+
+In order to do bias testing, it is often necessary to infer sensitive characteristics; in the current draft text, it is unclear whether the exceptions provided in draft Article 10(2), apply also to prohibitions in the draft Article 5(2). Such an exception would be necessary - not just for bias testing, but for determining other Fundamental Rights harms as well (for example, in order for CSOs and academia to conduct research on systemic risks of online platforms under DSA). Generally, such activities, while exempt from the prohibitions, should however be considered high risk.
 
 The exceptions in draft Article 10 (2) should therefore explicitly cover:
 
--   uses of data to investigate biases, discrimination, or other Fundamental Rights harms to individuals or society; 
--   logging of data necessary to investigate biases, discrimination, or other Fundamental Rights harms
--   storage of data used in investigating such harms, to allow for reproducibility and verifiability of results
+-   uses of data to investigate biases, discrimination, or other Fundamental Rights harms to individuals or society;
+-   logging of data necessary to investigate biases, discrimination, or other Fundamental Rights harms;
+-   storage of data used in investigating such harms, to allow for reproducibility and verifiability of results.
 
 Such activities should, however, be considered high-risk. The logging and storage should conform to strict technical safeguards for the protection of such data, preferably according to harmonised standards developed expressly for this purpose.
 
@@ -115,10 +101,10 @@ Such activities should, however, be considered high-risk. The logging and storag
 
 A large-scale controller might still be an SME, or a CSO.
 
-Digital rights organisations studying social media for their human rights impacts often need to process billions of comments from millions of users. They may do this themselves, or by going through another provider, possibly an SME.  Thus, while the requirements on large scale controllers in Articles 7 and 8 are necessary for the protection of data subject rights, it is important to consider that these requirements may also hit SMEs and CSOs, and not just large organisations.
+Digital rights organisations and academics studying social media for their human rights impacts often need to process billions of comments from millions of users. They may do this themselves, or (especially in the case of CSOs) by going through another provider, possibly an SME. Thus, while the requirements on large scale controllers in Articles 7 and 8 are necessary for the protection of data subject rights, it is important to consider that these requirements may also hit academia, SMEs and CSOs, and not just large organisations.
 
 ::: {.callout-note title="Not overburden SME"}
-requirements must be doable for SME and NGO
+requirements must be doable for SME, academia, and CSO
 :::
 
 # questions of technical feasibility
@@ -159,21 +145,23 @@ The proliferation of Artificial Intelligence (AI) magnifies the urgency of resol
 
 Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025] due to gatekeeper functions of the established AI interfaces:
 
-- Whoever controls the LLM interface — Claude, Openai, etc. ... — controls what tools users see, which ones get triggered, and what responses actually get surfaced.
-- You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output (new AI gate-keeper function).
-- You may not even be allowed to install it (gatekeeper like appstores)
+-   Whoever controls the LLM interface — Claude, Openai, etc. ... — controls what tools users see, which ones get triggered, and what responses actually get surfaced.
+-   You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output (new AI gate-keeper function).
+-   You may not even be allowed to install it (gatekeeper like appstores)
 
-The EU has begun to analyze under the rulings of the digital markets act if OpenAI/ChatGPT is a systemic paltfor [@bertuzzi_chatgpt_2025].
+The EU has begun to analyze under the rulings of the digital services act if OpenAI/ChatGPT is a very large online platform [@bertuzzi_chatgpt_2025].
 
 # standardization and interoperability as a possible solution
 
 Addressing the identified technical deficits requires the collaborative development and broad adoption of common, open standards and reference implementations for consent management and permissioned data sharing. Such standards must prioritize: user-centricity (intuitive control, transparency), SME manageability (reduced implementation burden for common EU companies), robust security (data integrity, confidentiality), and comprehensive auditability (verifiable compliance, consent tracking), federation (no single point of failure). Open standards are essential for fostering interoperability, preventing vendor lock-in, lowering development costs, and promoting a level playing field for innovation.
 
-While existing niche standardization efforts validate the feasibility and recognized need for such approaches within specific domains, they lack the universality required for a comprehensive, cross-sector solution, particularly in business-to-consumer (B2C) contexts. Initiatives like FHIR (Fast Healthcare Interoperability Resources) in healthcare [@noauthor_overview_nodate; @noauthor_not-od-19-122_nodate; @admin_mystery_2020] demonstrate the utility of domain-specific standards for data exchange and access management, yet a more broadly applicable framework is absent. For the domain of IOT the oneM2M onotolgies[^3] provide syntactic and semantic interoperability between several systems.
+While existing niche standardization efforts validate the feasibility and recognized need for such approaches within specific domains, they lack the universality required for a comprehensive, cross-sector solution, particularly in business-to-consumer (B2C) contexts. Initiatives like FHIR (Fast Healthcare Interoperability Resources) in healthcare [@noauthor_overview_nodate; @noauthor_not-od-19-122_nodate; @admin_mystery_2020] demonstrate the utility of domain-specific standards for data exchange and access management, yet a more broadly applicable framework is absent. For the domain of IOT, the oneM2M onotolgies[^3] provide syntactic and semantic interoperability between several systems.
 
 [^3]: https://www.onem2m.org/technical/onem2m-ontologies
 
-There exists no established platform for B2C for consent management. One notable implementation the authors are aware of is mydatamyconsent[^4]. Other tools mainly are there for deleting unwanted shared data like for example[^5]. Exchanging data for B2B purposes is even more important. To our best knowledge for sovereign data exchange only a limited set of solutions[^6] exists which tackles issues of identity and permission management in a holistic solution. Both examples for b2b and b2c function as isolated solutions rather than components of an interoperable, standardized ecosystem, thereby highlighting the existing architectural gap. One of the best examples for national data exchange and consent management may be found in Estonia. X Road is the name of of the data interchange system in Estonia. It is also the backbone for managing healthcare data there [@noauthor_estonian_2024]. One of the applications for consent managemnt running on top of X Road is Estfeed [@news_estfeed_2020].
+There exists no established platform for B2C for consent management. One notable implementation the authors are aware of is mydatamyconsent[^4]. Other tools are there mainly for deleting unwanted shared data, such as [^5]. Exchanging data for B2B purposes is even more important. To the best of our knowledge, for sovereign data exchange only a limited set of solutions[^6] exists which tackles issues of identity and permission management in a single, holistic solution. Both examples for B2B and B2C function as isolated solutions rather than components of an interoperable, standardized ecosystem, thereby highlighting the existing architectural gap. 
+
+One of the best examples for national data exchange and consent management may be found in Estonia. X Road is the Estonian data interchange system, where it is also the backbone for managing healthcare data [@noauthor_estonian_2024]. One of the applications for consent management running on top of X Road is Estfeed [@news_estfeed_2020].
 
 [^4]: https://mydatamyconsent.com
 
@@ -181,39 +169,35 @@ There exists no established platform for B2C for consent management. One notable
 
 [^6]: https://nexyo.io https://x-road.global https://www.roksnet.com/ https://planetway.com/en/planetcross/
 
-The sourcing of the eIDAS2 wallet via SPRIND may be a good example. A viable strategy for gap closing involves establishing a collaborative European initiative, potentially structured after open innovation agencies like Germany's SPRIND [@noauthor_sprind_nodate], to fund, coordinate, and accelerate the creation of these essential technical building blocks as public digital infrastructure. SPRIND facilitates the implementation of eIDAS through the development of an open wallet application. Through targeted challenges, analogous to the EUDI Wallet prototype initiative [@noauthor_sprind_nodate], such a program could mobilize expertise from academia, industry, and open-source communities. The objective would be the production of an openly licensed protocol and reference software implementations, thereby enhancing European digital sovereignty and equipping users and organizations with practical tools to manage data sharing effectively and securely. Furthermore, multiple hosting entities of the federated platform could then provide such a consent managment as a service to simplify SME adoption.
+The sourcing of the eIDAS2 wallet via SPRIND may be another good example. A viable strategy for gap closing involves establishing a collaborative European initiative, potentially structured on open innovation agencies like Germany's SPRIND [@noauthor_sprind_nodate], to fund, coordinate, and accelerate the creation of these essential technical building blocks as public digital infrastructure. SPRIND facilitates the implementation of eIDAS through the development of an open wallet application. Through targeted challenges, analogous to the EUDI Wallet prototype initiative [@noauthor_sprind_nodate], such a program could mobilize expertise from academia, industry, and open-source communities. The objective would be the production of an openly licensed protocol and reference software implementations, thereby enhancing European digital sovereignty and equipping users and organizations with practical tools to manage data sharing effectively and securely. Furthermore, multiple hosting entities of the federated platform could then provide such a consent managment as a service to simplify SME adoption.
 
-Essential technical capabilities require explicit definition and standardization to enable the construction of trustworthy data sharing systems. 
-This includes: 
+Essential technical capabilities require explicit definition and standardization to enable the construction of trustworthy data sharing systems. This includes:
 
-- reliable, context-appropriate user identity verification 
-- defining interoperable protocols for expressing, transmitting, and enforcing fine-grained authorization based on user consent 
-- easily auditable consent by consumers: User-friendly interfaces for reviewing historical and current consent grants 
-- withdrawal of consent must be possible, including verifiable deletion of the previously shared data
+-   reliable, context-appropriate user identity verification
+-   defining interoperable protocols for expressing, transmitting, and enforcing fine-grained authorization based on user consent
+-   easily auditable consent by consumers: User-friendly interfaces for reviewing historical and current consent grants
+-   withdrawal of consent must be possible, including verifiable deletion of the previously shared data
 
-Additionally, the concepts of "durable medium" (Article 7 (1b)) and "online interface" (Article 7 (1d)) needs to be further specified in the context of consent management.
 
-> TODO: Rania this part was deleted - was it intentional? I think it should be somehow here - perhaps in other words. see the bullets
+Additionally, the concepts of "durable medium" (Article 7 (1b)) and "online interface" (Article 7 (1d)) need to be further specified in the context of consent management.
+In particular, a standard for "durable medium" needs to include scalable, technically sound specifications that ensure:
 
-In particular it needs to include scalable, technically sound specifications that ensure:
+-   verifiability (cryptographic signatures)
+-   long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail)
+-   machine readable structures
 
-- verifiability (cryptographic signatures)
-- long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail)
-- machine readable structures
 
 The New Legislative Framework provides a convenient vehicle, and the draft text could include an article to mandate the development of apposite standards by the European SDOs.
 
-Finally, architectural principles guiding standardization should prioritize resilience, user control, and federation. Centralized systems introduce single points of failure and control, whereas a federated approach enhances system resilience, mitigates vendor lock-in, aligns more closely with principles of data minimization and user sovereignty, and fosters a more diverse and competitive European digital market.
-
-
+Generally, architectural principles guiding standardization should prioritize resilience, user control, and federation. Centralized systems introduce single points of failure and control, whereas a federated approach enhances system resilience, mitigates vendor lock-in, aligns more closely with principles of data minimization and user sovereignty, and fosters a more diverse and competitive European digital market.
 
 # summary
 
 Addressing the identified technical gaps in standardized data sharing and consent management protocols represents an urgent imperative for achieving Europe's dual objectives of robust data protection and a competitive, innovative digital single market. The current absence of common technical foundations generates significant operational friction, imposes disproportionate burdens on SMEs, and fails to equip users with effective controls for their data.
 
-Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting. <!-- perhaps, the draft could also provide high-level definitions on some of these interoperable aspects, and call for a standardisation request under NLF? -->
+Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting. The operating model of xroad provides a practicable example, and an opportunity to learn best practices https://x-road.global/x-road-organizational-model
 
-> TODO: Rania - I think mentioning the operating model of xroad and learning from that would be smart https://x-road.global/x-road-organizational-model
+Furthermore, the draft regulation could provide high-level requirements for the creation of a common technical foundation, to be implemented in standards under the NLF.
 
 Investing in these foundational elements as public digital infrastructure is crucial not only for streamlining regulatory compliance but also for empowering European businesses, cultivating user trust, and constructing a sovereign, resilient, and human-centric digital future.
 
