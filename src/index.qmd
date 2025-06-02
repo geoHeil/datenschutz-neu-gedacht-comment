@@ -31,7 +31,7 @@ We therefore suggest that in Article 5, it should be prohibited to *identify* (i
 
 This is not just a theoretical concern - already today, AI technologies are in use that:
 
--   use aspects such as hair style or color, attire, to identify a specific person (https://www.technologyreview.com/2025/05/12/1116295/how-a-new-type-of-ai-is-helping-police-skirt-facial-recognition-bans/ );
+-   use aspects such as hair style or color, attire, to identify a specific person [@odonnell_how_nodate];
 
 -   use samples of text to infer ethnicity, age, or gender.
 
@@ -43,6 +43,8 @@ Two further aspects of the processing of personal data need clarification:
 -   similarly, sensitive characteristics about one individual in a network, can reveal the same sensitive information about other persons in the same network.
 
 In such cases, we suggest that such processing should be prohibited, as a form of criticalisation. Furthermore, it should be clarified that the exception under consent applies only when the consent is obtained from *both* parties: the individual whose data already contains sensitive characteristics, as well as the individual whose sensitive characteristics are being inferred.
+
+> TODO: Rania - how about full groups/families? Is it even practical to get the conset of all in a famil yof 4-6 people?
 
 2.  The massive amounts of data available for processing nowadays often means that an AI system is not explicitly inferring sensitive characteristics, but is rather adopting a proxy.\
     For example, a system developed to categorise online shoppers, might group them into various "shopper profiles".\
@@ -84,32 +86,10 @@ In order to protect data subjects' rights, some requirements may fall on the use
 > TODO Georg: I like the table structure.  I have added the technical feasibility warning directly in the table.  In addition:  for the "Embeddings" heading: Is it technically feasible to require de-criticalisation of bulk data used in training the model? Does "at generation time" = at inference time?  what is "embedding provenance"?  and are you saying it is the _user_ of the LLM who has to de-criticalise any generated output, and who is forbidden to use the LLM for re-identification?  For the "generative output" heading: who is the "up-stream" provider?  
 Finally, I am not sure the "usage characteristics" belongs in the table.  I have pulled it out.
 
-```{=html}
-<!--
-#### ai model weights
-
-Trained models store their learnings as many numbers - commonly referred to as model weights.
-Large language models store billions of such parameters to have a lossy, compressed representation of the input data they were trained with.
-
-
-
-#### embeddings
-
-Embeddings often are treated with limited care.
-A recent publication has shown that the sensitive raw data may be retrievable from the embedded derivative [@jha_harnessing_2025].
-
-#### generative data
-
- - is llm iferenced/hallucinated data still personal data?
-
-#### usage characteristics
-
-(Non-Sensitive Use of Sensitive Data (Art. 10))
-
-Regarding Article 10: if I train a general purpose model, training it might process sensitive data, but this would be OK, because the purpose is not related to sensitive characteristics? But then, if a down-stream operator uses the fully-trained general purpose model to infer sensitive characteristics, that then becomes unlawful?
-
--->
-```
+> - generation time: yes inference
+> - embedding provenance is so far a  term not well defined - but probably should be related to normal data provenance (especially given that new paper)
+> - I think *the user* is the whole point (concluding after the table) who is using the technology for good or bad and who has to have the right intentions and final oversight
+> - agreed usage characteristics should be down
 
 ## fundamental rights - exceptions to article 9 GDPR
 
@@ -179,9 +159,9 @@ The proliferation of Artificial Intelligence (AI) magnifies the urgency of resol
 
 Furthermore, the digital markets act should reconsider their focus only ony social networks [@graham_mcps_2025] due to gatekeeper functions of the established AI interfaces:
 
--   Whoever controls the LLM interface — Claude, Openai, etc. ... — controls what tools users see, which ones get triggered, and what responses actually get surfaced.
--   You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output (new AI gate-keeper function).
--   You may not even be allowed to install it (gatekeeper like appstores)
+- Whoever controls the LLM interface — Claude, Openai, etc. ... — controls what tools users see, which ones get triggered, and what responses actually get surfaced.
+- You can build the world’s most useful MCP server, but the client may not call it, or only show half of its output (new AI gate-keeper function).
+- You may not even be allowed to install it (gatekeeper like appstores)
 
 The EU has begun to analyze under the rulings of the digital markets act if OpenAI/ChatGPT is a systemic paltfor [@bertuzzi_chatgpt_2025].
 
@@ -207,14 +187,19 @@ Essential technical capabilities require explicit definition and standardization
 This includes: 
 
 - reliable, context-appropriate user identity verification 
-
 - defining interoperable protocols for expressing, transmitting, and enforcing fine-grained authorization based on user consent 
-
 - easily auditable consent by consumers: User-friendly interfaces for reviewing historical and current consent grants 
-
 - withdrawal of consent must be possible, including verifiable deletion of the previously shared data
 
 Additionally, the concepts of "durable medium" (Article 7 (1b)) and "online interface" (Article 7 (1d)) needs to be further specified in the context of consent management.
+
+> TODO: Rania this part was deleted - was it intentional? I think it should be somehow here - perhaps in other words. see the bullets
+
+In particular it needs to include scalable, technically sound specifications that ensure:
+
+- verifiability (cryptographic signatures)
+- long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail)
+- machine readable structures
 
 The New Legislative Framework provides a convenient vehicle, and the draft text could include an article to mandate the development of apposite standards by the European SDOs.
 
@@ -227,6 +212,8 @@ Finally, architectural principles guiding standardization should prioritize resi
 Addressing the identified technical gaps in standardized data sharing and consent management protocols represents an urgent imperative for achieving Europe's dual objectives of robust data protection and a competitive, innovative digital single market. The current absence of common technical foundations generates significant operational friction, imposes disproportionate burdens on SMEs, and fails to equip users with effective controls for their data.
 
 Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting. <!-- perhaps, the draft could also provide high-level definitions on some of these interoperable aspects, and call for a standardisation request under NLF? -->
+
+> TODO: Rania - I think mentioning the operating model of xroad and learning from that would be smart https://x-road.global/x-road-organizational-model
 
 Investing in these foundational elements as public digital infrastructure is crucial not only for streamlining regulatory compliance but also for empowering European businesses, cultivating user trust, and constructing a sovereign, resilient, and human-centric digital future.
 
