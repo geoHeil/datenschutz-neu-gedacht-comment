@@ -43,8 +43,6 @@ Two further aspects of the processing of personal data need clarification:
 
 In such cases, we suggest that such processing should be prohibited, as a form of criticalisation. Furthermore, it should be clarified that the exception under consent applies only when the consent is obtained from *both* parties: the individual whose data already contains sensitive characteristics, as well as the individual whose sensitive characteristics are being inferred. Note that this also covers the case of groups or families: consent needs to be obtained *from each person in the group whose sensitive characteristics will be inferred*.
 
-> TODO: Rania - how about full groups/families? Is it even practical to get the conset of all in a famil yof 4-6 people? DONE. Ja, das bezieht sich ja auf jeden einzelnen, dessen sensitive charcteristics inferred werden - und nicht unbedingt pauschal auf die ganze Familie.
-
 2.  The massive amounts of data available for processing nowadays often means that an AI system is not explicitly inferring sensitive characteristics, but is rather adopting a proxy.\
     For example, a system developed to categorise online shoppers, might group them into various "shopper profiles".\
     Even though the people in "shopper profile A" are not explicitly grouped by sensitive characteristics, it could actually be that they all are of the same gender, economic class, or age range.\
@@ -125,7 +123,7 @@ Sometimes - new standards are enforced without the people at mind. Everyone has 
 
 One more example is the feature of social login (login with Facebook Google, Apple, Microsoft). These companies provide means to manage access to their data. And due to their size a lot of other - also European players include theim in their digital service offerings. However, the functionality to review (audit) many grants accross the various providers is missing or automatic renewal process/expiry for grants. The lack of standardized protocols for granular, revocable data sharing impedes interoperability and effective consent management within digital ecosystems. Unlike mature protocols governing fundamental internet functions (e.g., SMTP, HTTP), no widely adopted technical standard exists to enable users or systems to reliably grant, manage, audit, and retract specific data usage permissions. Current implementations frequently rely on inconsistent, ad-hoc solutions or overly simplistic mechanisms. In fact, in the case of cookie banners many actors employ dark patterns to trick people into giving more broad consent than initially intended.
 
-Article 7b refers to a "durable medium" which allows for easy access - online. This necessitates a more clearly spelled out solution. In particular it needs to include scalable, technically sound specifications that ensure: - verifiability (cryptographic signatures) - long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail) - machine readable structure
+Article 7b refers to a "durable medium" which allows for easy access - online. This necessitates a more clearly spelled out solution. In particular it needs to include scalable, technically sound specifications that ensure: - verifiability (cryptographic signatures) - long-term accessibility beyond literal interpretations like paper printouts (tamper resistant audit trail) - machine readable structure.
 
 # impact on SMEs and competitivity
 
@@ -193,7 +191,9 @@ Generally, architectural principles guiding standardization should prioritize re
 
 Addressing the identified technical gaps in standardized data sharing and consent management protocols represents an urgent imperative for achieving Europe's dual objectives of robust data protection and a competitive, innovative digital single market. The current absence of common technical foundations generates significant operational friction, imposes disproportionate burdens on SMEs, and fails to equip users with effective controls for their data.
 
-Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting. The operating model of xroad provides a practicable example, and an opportunity to learn best practices https://x-road.global/x-road-organizational-model
+Therefore, a concerted, collaborative effort, potentially catalyzed by an EU-level open innovation initiative, is required to develop the necessary open technical standards, protocols, and perhaps hosting. The operating model of xroad provides a practicable example, and an opportunity to learn best practices [^7].
+
+[^7]: https://x-road.global/x-road-organizational-model
 
 Furthermore, the draft regulation could provide high-level requirements for the creation of a common technical foundation, to be implemented in standards under the NLF.
 
