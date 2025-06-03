@@ -32,7 +32,6 @@ We therefore suggest that in Article 5, it should be prohibited to *identify* (i
 This is not just a theoretical concern - already today, AI technologies are in use that:
 
 -   use features such as hair style or color, attire and accessories to identify a specific person [@odonnell_how_nodate];
-
 -   use samples of text to infer ethnicity, age, or gender.
 
 Two further aspects of the processing of personal data need clarification:
@@ -82,7 +81,6 @@ In order to protect data subjects' rights, some requirements may fall on the *us
 The meaning of draft Article 10 (1a) is ambiguous. Is this to be read as: 
 
 1. the data is (biometric or genetic in nature and allows the unique identification of a natural person) or is (inherently and specifically linked with sensitive characteristics); or as 
-
 1. the data is \[biometric or genetic in nature\] and \[(allows the unique identification of a natural person) or (is inherently and specifically linked with sensitive characteristics)\].
 
 Presumably, interpretation 1 is intended, as this seems closer to the original GDPR Article 9?  Interpretation 2 begs the question, why practices should be forbidden for biometric or genetic data, but not for other types of data that fulfil the same object (of allowing the unique identification of a natural person, or of being inherently and specifically linked to sensitive characteristics).
